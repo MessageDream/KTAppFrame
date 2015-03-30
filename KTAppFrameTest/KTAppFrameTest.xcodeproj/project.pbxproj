@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B2F4A0AE1AC901440022ACA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A0AD1AC901440022ACA5 /* main.m */; };
+		B2F4A0B11AC901440022ACA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A0B01AC901440022ACA5 /* AppDelegate.m */; };
+		B2F4A0B41AC901440022ACA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A0B31AC901440022ACA5 /* ViewController.m */; };
+		B2F4A0B91AC901440022ACA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F4A0B81AC901440022ACA5 /* Images.xcassets */; };
+		B2F4A0BC1AC901440022ACA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F4A0BA1AC901440022ACA5 /* LaunchScreen.xib */; };
+		B2F4A0C81AC901440022ACA5 /* KTAppFrameTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A0C71AC901440022ACA5 /* KTAppFrameTestTests.m */; };
+		B2F4A3001AC9566A0022ACA5 /* libKTAppFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F4A2FC1AC955AF0022ACA5 /* libKTAppFrame.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2F4A0C21AC901440022ACA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2F4A0A01AC901440022ACA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2F4A0A71AC901440022ACA5;
+			remoteInfo = KTAppFrameTest;
+		};
+		B2F4A2FB1AC955AF0022ACA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2F4A2F61AC955AF0022ACA5 /* KTAppFrame.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B2F4A0DA1AC901D70022ACA5;
+			remoteInfo = KTAppFrame;
+		};
+		B2F4A2FD1AC955AF0022ACA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2F4A2F61AC955AF0022ACA5 /* KTAppFrame.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B2F4A0E51AC901D70022ACA5;
+			remoteInfo = KTAppFrameTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B2F4A0A81AC901440022ACA5 /* KTAppFrameTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTAppFrameTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F4A0AC1AC901440022ACA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2F4A0AD1AC901440022ACA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B2F4A0AF1AC901440022ACA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B2F4A0B01AC901440022ACA5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B2F4A0B21AC901440022ACA5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B2F4A0B31AC901440022ACA5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B2F4A0B81AC901440022ACA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B2F4A0BB1AC901440022ACA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B2F4A0C11AC901440022ACA5 /* KTAppFrameTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KTAppFrameTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F4A0C61AC901440022ACA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2F4A0C71AC901440022ACA5 /* KTAppFrameTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTAppFrameTestTests.m; sourceTree = "<group>"; };
+		B2F4A2F61AC955AF0022ACA5 /* KTAppFrame.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KTAppFrame.xcodeproj; path = ../KTAppFrame.xcodeproj; sourceTree = "<group>"; };
+		B2F4A2FF1AC9562E0022ACA5 /* KTAppFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTAppFrame.h; path = ../../KTAppFrame/KTAppFrame.h; sourceTree = "<group>"; };
+		B2F4A3011AC956810022ACA5 /* libPods-KTAppFrame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KTAppFrame.a"; path = "/Users/jayden/Documents/WorkSpace/XCodeProject/KTAppFrame/Pods/../build/Debug-iphoneos/libPods-KTAppFrame.a"; sourceTree = "<absolute>"; };
+		B2F4A3031AC9568B0022ACA5 /* libPods-KTAppFrame-Masonry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KTAppFrame-Masonry.a"; path = "/Users/jayden/Documents/WorkSpace/XCodeProject/KTAppFrame/Pods/../build/Debug-iphoneos/libPods-KTAppFrame-Masonry.a"; sourceTree = "<absolute>"; };
+		B2F4A3051AC956940022ACA5 /* libPods-KTAppFrameTest-Masonry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KTAppFrameTest-Masonry.a"; path = "/Users/jayden/Documents/WorkSpace/XCodeProject/KTAppFrame/Pods/../build/Debug-iphoneos/libPods-KTAppFrameTest-Masonry.a"; sourceTree = "<absolute>"; };
+		EE172E3E9792D753B9117D45 /* libPods-KTAppFrameTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KTAppFrameTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2F4A0A51AC901440022ACA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F4A3001AC9566A0022ACA5 /* libKTAppFrame.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F4A0BE1AC901440022ACA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D2013B79B8D2A3D02FE00B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A3051AC956940022ACA5 /* libPods-KTAppFrameTest-Masonry.a */,
+				B2F4A3031AC9568B0022ACA5 /* libPods-KTAppFrame-Masonry.a */,
+				B2F4A3011AC956810022ACA5 /* libPods-KTAppFrame.a */,
+				EE172E3E9792D753B9117D45 /* libPods-KTAppFrameTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2F4A09F1AC901440022ACA5 = {
+			isa = PBXGroup;
+			children = (
+				B2F4A0F41AC901EE0022ACA5 /* KTAppFrame */,
+				B2F4A0AA1AC901440022ACA5 /* KTAppFrameTest */,
+				B2F4A0C41AC901440022ACA5 /* KTAppFrameTestTests */,
+				B2F4A0A91AC901440022ACA5 /* Products */,
+				7D2013B79B8D2A3D02FE00B3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B2F4A0A91AC901440022ACA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A0A81AC901440022ACA5 /* KTAppFrameTest.app */,
+				B2F4A0C11AC901440022ACA5 /* KTAppFrameTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2F4A0AA1AC901440022ACA5 /* KTAppFrameTest */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2B71AC933260022ACA5 /* include */,
+				B2F4A0AF1AC901440022ACA5 /* AppDelegate.h */,
+				B2F4A0B01AC901440022ACA5 /* AppDelegate.m */,
+				B2F4A0B21AC901440022ACA5 /* ViewController.h */,
+				B2F4A0B31AC901440022ACA5 /* ViewController.m */,
+				B2F4A0B81AC901440022ACA5 /* Images.xcassets */,
+				B2F4A0BA1AC901440022ACA5 /* LaunchScreen.xib */,
+				B2F4A0AB1AC901440022ACA5 /* Supporting Files */,
+			);
+			path = KTAppFrameTest;
+			sourceTree = "<group>";
+		};
+		B2F4A0AB1AC901440022ACA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A0AC1AC901440022ACA5 /* Info.plist */,
+				B2F4A0AD1AC901440022ACA5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2F4A0C41AC901440022ACA5 /* KTAppFrameTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A0C71AC901440022ACA5 /* KTAppFrameTestTests.m */,
+				B2F4A0C51AC901440022ACA5 /* Supporting Files */,
+			);
+			path = KTAppFrameTestTests;
+			sourceTree = "<group>";
+		};
+		B2F4A0C51AC901440022ACA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A0C61AC901440022ACA5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2F4A0F41AC901EE0022ACA5 /* KTAppFrame */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2F61AC955AF0022ACA5 /* KTAppFrame.xcodeproj */,
+			);
+			name = KTAppFrame;
+			sourceTree = "<group>";
+		};
+		B2F4A2B71AC933260022ACA5 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2FF1AC9562E0022ACA5 /* KTAppFrame.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		B2F4A2F71AC955AF0022ACA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2FC1AC955AF0022ACA5 /* libKTAppFrame.a */,
+				B2F4A2FE1AC955AF0022ACA5 /* KTAppFrameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2F4A0A71AC901440022ACA5 /* KTAppFrameTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2F4A0CB1AC901440022ACA5 /* Build configuration list for PBXNativeTarget "KTAppFrameTest" */;
+			buildPhases = (
+				B2F4A0A41AC901440022ACA5 /* Sources */,
+				B2F4A0A51AC901440022ACA5 /* Frameworks */,
+				B2F4A0A61AC901440022ACA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KTAppFrameTest;
+			productName = KTAppFrameTest;
+			productReference = B2F4A0A81AC901440022ACA5 /* KTAppFrameTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B2F4A0C01AC901440022ACA5 /* KTAppFrameTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2F4A0CE1AC901440022ACA5 /* Build configuration list for PBXNativeTarget "KTAppFrameTestTests" */;
+			buildPhases = (
+				B2F4A0BD1AC901440022ACA5 /* Sources */,
+				B2F4A0BE1AC901440022ACA5 /* Frameworks */,
+				B2F4A0BF1AC901440022ACA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2F4A0C31AC901440022ACA5 /* PBXTargetDependency */,
+			);
+			name = KTAppFrameTestTests;
+			productName = KTAppFrameTestTests;
+			productReference = B2F4A0C11AC901440022ACA5 /* KTAppFrameTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2F4A0A01AC901440022ACA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = jayden;
+				TargetAttributes = {
+					B2F4A0A71AC901440022ACA5 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					B2F4A0C01AC901440022ACA5 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = B2F4A0A71AC901440022ACA5;
+					};
+				};
+			};
+			buildConfigurationList = B2F4A0A31AC901440022ACA5 /* Build configuration list for PBXProject "KTAppFrameTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2F4A09F1AC901440022ACA5;
+			productRefGroup = B2F4A0A91AC901440022ACA5 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B2F4A2F71AC955AF0022ACA5 /* Products */;
+					ProjectRef = B2F4A2F61AC955AF0022ACA5 /* KTAppFrame.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B2F4A0A71AC901440022ACA5 /* KTAppFrameTest */,
+				B2F4A0C01AC901440022ACA5 /* KTAppFrameTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B2F4A2FC1AC955AF0022ACA5 /* libKTAppFrame.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKTAppFrame.a;
+			remoteRef = B2F4A2FB1AC955AF0022ACA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2F4A2FE1AC955AF0022ACA5 /* KTAppFrameTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KTAppFrameTests.xctest;
+			remoteRef = B2F4A2FD1AC955AF0022ACA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2F4A0A61AC901440022ACA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F4A0BC1AC901440022ACA5 /* LaunchScreen.xib in Resources */,
+				B2F4A0B91AC901440022ACA5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F4A0BF1AC901440022ACA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2F4A0A41AC901440022ACA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F4A0B41AC901440022ACA5 /* ViewController.m in Sources */,
+				B2F4A0B11AC901440022ACA5 /* AppDelegate.m in Sources */,
+				B2F4A0AE1AC901440022ACA5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F4A0BD1AC901440022ACA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F4A0C81AC901440022ACA5 /* KTAppFrameTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2F4A0C31AC901440022ACA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2F4A0A71AC901440022ACA5 /* KTAppFrameTest */;
+			targetProxy = B2F4A0C21AC901440022ACA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B2F4A0BA1AC901440022ACA5 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2F4A0BB1AC901440022ACA5 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2F4A0C91AC901440022ACA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2F4A0CA1AC901440022ACA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2F4A0CC1AC901440022ACA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
+				INFOPLIST_FILE = KTAppFrameTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jayden/Documents/WorkSpace/XCodeProject/KTAppFrame/Pods/../build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 x86_64 armv7s";
+			};
+			name = Debug;
+		};
+		B2F4A0CD1AC901440022ACA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
+				INFOPLIST_FILE = KTAppFrameTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jayden/Documents/WorkSpace/XCodeProject/KTAppFrame/Pods/../build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 x86_64 armv7s";
+			};
+			name = Release;
+		};
+		B2F4A0CF1AC901440022ACA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KTAppFrameTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KTAppFrameTest.app/KTAppFrameTest";
+			};
+			name = Debug;
+		};
+		B2F4A0D01AC901440022ACA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KTAppFrameTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KTAppFrameTest.app/KTAppFrameTest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2F4A0A31AC901440022ACA5 /* Build configuration list for PBXProject "KTAppFrameTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F4A0C91AC901440022ACA5 /* Debug */,
+				B2F4A0CA1AC901440022ACA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2F4A0CB1AC901440022ACA5 /* Build configuration list for PBXNativeTarget "KTAppFrameTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F4A0CC1AC901440022ACA5 /* Debug */,
+				B2F4A0CD1AC901440022ACA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2F4A0CE1AC901440022ACA5 /* Build configuration list for PBXNativeTarget "KTAppFrameTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F4A0CF1AC901440022ACA5 /* Debug */,
+				B2F4A0D01AC901440022ACA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2F4A0A01AC901440022ACA5 /* Project object */;
+}

@@ -1,0 +1,1011 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B2F4A0DE1AC901D70022ACA5 /* KTAppFrame.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4A0DD1AC901D70022ACA5 /* KTAppFrame.h */; };
+		B2F4A0E01AC901D70022ACA5 /* KTAppFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A0DF1AC901D70022ACA5 /* KTAppFrame.m */; };
+		B2F4A0E61AC901D70022ACA5 /* libKTAppFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F4A0DA1AC901D70022ACA5 /* libKTAppFrame.a */; };
+		B2F4A2361AC906000022ACA5 /* KTAccountApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1B81AC906000022ACA5 /* KTAccountApi.m */; };
+		B2F4A2371AC906000022ACA5 /* KTUserApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1BB1AC906000022ACA5 /* KTUserApi.m */; };
+		B2F4A2381AC906000022ACA5 /* KTModelAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1BF1AC906000022ACA5 /* KTModelAccount.m */; };
+		B2F4A2391AC906000022ACA5 /* KTModelGamequery.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1C11AC906000022ACA5 /* KTModelGamequery.m */; };
+		B2F4A23A1AC906000022ACA5 /* KTModelUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1C31AC906000022ACA5 /* KTModelUser.m */; };
+		B2F4A23B1AC906000022ACA5 /* KTBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1C71AC906000022ACA5 /* KTBaseApi.m */; };
+		B2F4A23C1AC906000022ACA5 /* KTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1CB1AC906000022ACA5 /* KTModel.m */; };
+		B2F4A23D1AC906000022ACA5 /* KTModelBaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1CD1AC906000022ACA5 /* KTModelBaseInfo.m */; };
+		B2F4A23E1AC906000022ACA5 /* KTModelGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1CF1AC906000022ACA5 /* KTModelGame.m */; };
+		B2F4A23F1AC906000022ACA5 /* KTModelImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1D11AC906000022ACA5 /* KTModelImage.m */; };
+		B2F4A2401AC906000022ACA5 /* KTModelRedeemReward.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1D41AC906000022ACA5 /* KTModelRedeemReward.m */; };
+		B2F4A2411AC906000022ACA5 /* KTModelSuccess.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1D61AC906000022ACA5 /* KTModelSuccess.m */; };
+		B2F4A2421AC906000022ACA5 /* KTApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1D91AC906000022ACA5 /* KTApi.m */; };
+		B2F4A2431AC906000022ACA5 /* KTApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1DB1AC906000022ACA5 /* KTApiClient.m */; };
+		B2F4A2441AC906000022ACA5 /* KTApiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1DD1AC906000022ACA5 /* KTApiResponse.m */; };
+		B2F4A2451AC906000022ACA5 /* KTModeHelperIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1E01AC906000022ACA5 /* KTModeHelperIvar.m */; };
+		B2F4A2461AC906000022ACA5 /* KTModeHelperMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1E21AC906000022ACA5 /* KTModeHelperMethod.m */; };
+		B2F4A2471AC906000022ACA5 /* KTModelHelpArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1E41AC906000022ACA5 /* KTModelHelpArgument.m */; };
+		B2F4A2481AC906000022ACA5 /* KTModelHelperFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1E81AC906000022ACA5 /* KTModelHelperFoundation.m */; };
+		B2F4A2491AC906000022ACA5 /* KTModelHelperMember.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1EA1AC906000022ACA5 /* KTModelHelperMember.m */; };
+		B2F4A24A1AC906000022ACA5 /* KTModelHelperType.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1EC1AC906000022ACA5 /* KTModelHelperType.m */; };
+		B2F4A24B1AC906000022ACA5 /* KTModelHelperTypeEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1EE1AC906000022ACA5 /* KTModelHelperTypeEncoding.m */; };
+		B2F4A24C1AC906000022ACA5 /* NSObject+KTModelHelperCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1F01AC906000022ACA5 /* NSObject+KTModelHelperCoding.m */; };
+		B2F4A24D1AC906000022ACA5 /* NSObject+KTModelHelperKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1F21AC906000022ACA5 /* NSObject+KTModelHelperKeyValue.m */; };
+		B2F4A24E1AC906000022ACA5 /* NSObject+KTModelHelperMember.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1F41AC906000022ACA5 /* NSObject+KTModelHelperMember.m */; };
+		B2F4A24F1AC906000022ACA5 /* KTAlphaValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1F81AC906000022ACA5 /* KTAlphaValidator.m */; };
+		B2F4A2501AC906000022ACA5 /* KTEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1FA1AC906000022ACA5 /* KTEmailValidator.m */; };
+		B2F4A2511AC906000022ACA5 /* KTLengthValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1FC1AC906000022ACA5 /* KTLengthValidator.m */; };
+		B2F4A2521AC906000022ACA5 /* KTNumericValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A1FE1AC906000022ACA5 /* KTNumericValidator.m */; };
+		B2F4A2531AC906000022ACA5 /* KTRangeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2001AC906000022ACA5 /* KTRangeValidator.m */; };
+		B2F4A2541AC906000022ACA5 /* KTRegexValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2021AC906000022ACA5 /* KTRegexValidator.m */; };
+		B2F4A2551AC906000022ACA5 /* KTRequiredValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2041AC906000022ACA5 /* KTRequiredValidator.m */; };
+		B2F4A2561AC906000022ACA5 /* KTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2061AC906000022ACA5 /* KTValidator.m */; };
+		B2F4A2571AC906000022ACA5 /* KTCommunityApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A20B1AC906000022ACA5 /* KTCommunityApi.m */; };
+		B2F4A2581AC906000022ACA5 /* KTModelContactBookPeople.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A20F1AC906000022ACA5 /* KTModelContactBookPeople.m */; };
+		B2F4A2591AC906000022ACA5 /* KTModelHomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2111AC906000022ACA5 /* KTModelHomePage.m */; };
+		B2F4A25A1AC906000022ACA5 /* KTModelReply.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2131AC906000022ACA5 /* KTModelReply.m */; };
+		B2F4A25B1AC906000022ACA5 /* KTModelTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2151AC906000022ACA5 /* KTModelTopic.m */; };
+		B2F4A25C1AC906000022ACA5 /* KTModelTopicActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2171AC906000022ACA5 /* KTModelTopicActivity.m */; };
+		B2F4A25D1AC906000022ACA5 /* KTFriendApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A21B1AC906000022ACA5 /* KTFriendApi.m */; };
+		B2F4A25E1AC906000022ACA5 /* KTModelFriendship.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A21F1AC906000022ACA5 /* KTModelFriendship.m */; };
+		B2F4A25F1AC906000022ACA5 /* KTModelFriendshipRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2211AC906000022ACA5 /* KTModelFriendshipRequest.m */; };
+		B2F4A2601AC906000022ACA5 /* KTInboxApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2251AC906000022ACA5 /* KTInboxApi.m */; };
+		B2F4A2611AC906000022ACA5 /* KTModelDeepLink.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2291AC906000022ACA5 /* KTModelDeepLink.m */; };
+		B2F4A2621AC906000022ACA5 /* KTModelNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A22B1AC906000022ACA5 /* KTModelNotice.m */; };
+		B2F4A2631AC906000022ACA5 /* KTModelReward.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A22D1AC906000022ACA5 /* KTModelReward.m */; };
+		B2F4A2641AC906000022ACA5 /* KTLeaderboardApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2311AC906000022ACA5 /* KTLeaderboardApi.m */; };
+		B2F4A2651AC906000022ACA5 /* KTModelLeaderboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2351AC906000022ACA5 /* KTModelLeaderboard.m */; };
+		B2F4A2781AC906100022ACA5 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F4A2711AC906100022ACA5 /* libAFNetworking.a */; };
+		B2F4A2791AC906100022ACA5 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2761AC906100022ACA5 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B2F4A27A1AC906100022ACA5 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A2771AC906100022ACA5 /* README.md */; };
+		B2F4A3201AC958FA0022ACA5 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A30A1AC958FA0022ACA5 /* MASCompositeConstraint.m */; };
+		B2F4A3211AC958FA0022ACA5 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A30D1AC958FA0022ACA5 /* MASConstraint.m */; };
+		B2F4A3221AC958FA0022ACA5 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A30F1AC958FA0022ACA5 /* MASConstraintMaker.m */; };
+		B2F4A3231AC958FA0022ACA5 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A3111AC958FA0022ACA5 /* MASLayoutConstraint.m */; };
+		B2F4A3241AC958FA0022ACA5 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A3151AC958FA0022ACA5 /* MASViewAttribute.m */; };
+		B2F4A3251AC958FA0022ACA5 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A3171AC958FA0022ACA5 /* MASViewConstraint.m */; };
+		B2F4A3261AC958FA0022ACA5 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A3191AC958FA0022ACA5 /* NSArray+MASAdditions.m */; };
+		B2F4A3271AC958FA0022ACA5 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A31C1AC958FA0022ACA5 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		B2F4A3281AC958FA0022ACA5 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A31E1AC958FA0022ACA5 /* View+MASAdditions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2F4A0E71AC901D70022ACA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2F4A0D21AC901D70022ACA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2F4A0D91AC901D70022ACA5;
+			remoteInfo = KTAppFrame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B2F4A0D81AC901D70022ACA5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				B2F4A0DE1AC901D70022ACA5 /* KTAppFrame.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		16FA43986FDA3819A85A6DAB /* libPods-KTAppFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KTAppFrame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F4A0DA1AC901D70022ACA5 /* libKTAppFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKTAppFrame.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F4A0DD1AC901D70022ACA5 /* KTAppFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTAppFrame.h; sourceTree = "<group>"; };
+		B2F4A0DF1AC901D70022ACA5 /* KTAppFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTAppFrame.m; sourceTree = "<group>"; };
+		B2F4A0E51AC901D70022ACA5 /* KTAppFrameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KTAppFrameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F4A0EB1AC901D70022ACA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2F4A1B71AC906000022ACA5 /* KTAccountApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAccountApi.h; sourceTree = "<group>"; };
+		B2F4A1B81AC906000022ACA5 /* KTAccountApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAccountApi.m; sourceTree = "<group>"; };
+		B2F4A1B91AC906000022ACA5 /* KTAccountApiDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAccountApiDefines.h; sourceTree = "<group>"; };
+		B2F4A1BA1AC906000022ACA5 /* KTUserApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTUserApi.h; sourceTree = "<group>"; };
+		B2F4A1BB1AC906000022ACA5 /* KTUserApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTUserApi.m; sourceTree = "<group>"; };
+		B2F4A1BC1AC906000022ACA5 /* KTUserApiDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTUserApiDefines.h; sourceTree = "<group>"; };
+		B2F4A1BE1AC906000022ACA5 /* KTModelAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelAccount.h; sourceTree = "<group>"; };
+		B2F4A1BF1AC906000022ACA5 /* KTModelAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelAccount.m; sourceTree = "<group>"; };
+		B2F4A1C01AC906000022ACA5 /* KTModelGamequery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelGamequery.h; sourceTree = "<group>"; };
+		B2F4A1C11AC906000022ACA5 /* KTModelGamequery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelGamequery.m; sourceTree = "<group>"; };
+		B2F4A1C21AC906000022ACA5 /* KTModelUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelUser.h; sourceTree = "<group>"; };
+		B2F4A1C31AC906000022ACA5 /* KTModelUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelUser.m; sourceTree = "<group>"; };
+		B2F4A1C61AC906000022ACA5 /* KTBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTBaseApi.h; sourceTree = "<group>"; };
+		B2F4A1C71AC906000022ACA5 /* KTBaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTBaseApi.m; sourceTree = "<group>"; };
+		B2F4A1C81AC906000022ACA5 /* KTCommonApiDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCommonApiDefines.h; sourceTree = "<group>"; };
+		B2F4A1CA1AC906000022ACA5 /* KTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModel.h; sourceTree = "<group>"; };
+		B2F4A1CB1AC906000022ACA5 /* KTModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModel.m; sourceTree = "<group>"; };
+		B2F4A1CC1AC906000022ACA5 /* KTModelBaseInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelBaseInfo.h; sourceTree = "<group>"; };
+		B2F4A1CD1AC906000022ACA5 /* KTModelBaseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelBaseInfo.m; sourceTree = "<group>"; };
+		B2F4A1CE1AC906000022ACA5 /* KTModelGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelGame.h; sourceTree = "<group>"; };
+		B2F4A1CF1AC906000022ACA5 /* KTModelGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelGame.m; sourceTree = "<group>"; };
+		B2F4A1D01AC906000022ACA5 /* KTModelImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelImage.h; sourceTree = "<group>"; };
+		B2F4A1D11AC906000022ACA5 /* KTModelImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelImage.m; sourceTree = "<group>"; };
+		B2F4A1D21AC906000022ACA5 /* KTModelMappingDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelMappingDefines.h; sourceTree = "<group>"; };
+		B2F4A1D31AC906000022ACA5 /* KTModelRedeemReward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelRedeemReward.h; sourceTree = "<group>"; };
+		B2F4A1D41AC906000022ACA5 /* KTModelRedeemReward.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelRedeemReward.m; sourceTree = "<group>"; };
+		B2F4A1D51AC906000022ACA5 /* KTModelSuccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelSuccess.h; sourceTree = "<group>"; };
+		B2F4A1D61AC906000022ACA5 /* KTModelSuccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelSuccess.m; sourceTree = "<group>"; };
+		B2F4A1D81AC906000022ACA5 /* KTApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTApi.h; sourceTree = "<group>"; };
+		B2F4A1D91AC906000022ACA5 /* KTApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTApi.m; sourceTree = "<group>"; };
+		B2F4A1DA1AC906000022ACA5 /* KTApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTApiClient.h; sourceTree = "<group>"; };
+		B2F4A1DB1AC906000022ACA5 /* KTApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTApiClient.m; sourceTree = "<group>"; };
+		B2F4A1DC1AC906000022ACA5 /* KTApiResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTApiResponse.h; sourceTree = "<group>"; };
+		B2F4A1DD1AC906000022ACA5 /* KTApiResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTApiResponse.m; sourceTree = "<group>"; };
+		B2F4A1DF1AC906000022ACA5 /* KTModeHelperIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModeHelperIvar.h; sourceTree = "<group>"; };
+		B2F4A1E01AC906000022ACA5 /* KTModeHelperIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModeHelperIvar.m; sourceTree = "<group>"; };
+		B2F4A1E11AC906000022ACA5 /* KTModeHelperMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModeHelperMethod.h; sourceTree = "<group>"; };
+		B2F4A1E21AC906000022ACA5 /* KTModeHelperMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModeHelperMethod.m; sourceTree = "<group>"; };
+		B2F4A1E31AC906000022ACA5 /* KTModelHelpArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelHelpArgument.h; sourceTree = "<group>"; };
+		B2F4A1E41AC906000022ACA5 /* KTModelHelpArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelHelpArgument.m; sourceTree = "<group>"; };
+		B2F4A1E51AC906000022ACA5 /* KTModelHelperConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelHelperConst.h; sourceTree = "<group>"; };
+		B2F4A1E61AC906000022ACA5 /* KTModelHelperExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelHelperExtension.h; sourceTree = "<group>"; };
+		B2F4A1E71AC906000022ACA5 /* KTModelHelperFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelHelperFoundation.h; sourceTree = "<group>"; };
+		B2F4A1E81AC906000022ACA5 /* KTModelHelperFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelHelperFoundation.m; sourceTree = "<group>"; };
+		B2F4A1E91AC906000022ACA5 /* KTModelHelperMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelHelperMember.h; sourceTree = "<group>"; };
+		B2F4A1EA1AC906000022ACA5 /* KTModelHelperMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelHelperMember.m; sourceTree = "<group>"; };
+		B2F4A1EB1AC906000022ACA5 /* KTModelHelperType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelHelperType.h; sourceTree = "<group>"; };
+		B2F4A1EC1AC906000022ACA5 /* KTModelHelperType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelHelperType.m; sourceTree = "<group>"; };
+		B2F4A1ED1AC906000022ACA5 /* KTModelHelperTypeEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelHelperTypeEncoding.h; sourceTree = "<group>"; };
+		B2F4A1EE1AC906000022ACA5 /* KTModelHelperTypeEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelHelperTypeEncoding.m; sourceTree = "<group>"; };
+		B2F4A1EF1AC906000022ACA5 /* NSObject+KTModelHelperCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KTModelHelperCoding.h"; sourceTree = "<group>"; };
+		B2F4A1F01AC906000022ACA5 /* NSObject+KTModelHelperCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KTModelHelperCoding.m"; sourceTree = "<group>"; };
+		B2F4A1F11AC906000022ACA5 /* NSObject+KTModelHelperKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KTModelHelperKeyValue.h"; sourceTree = "<group>"; };
+		B2F4A1F21AC906000022ACA5 /* NSObject+KTModelHelperKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KTModelHelperKeyValue.m"; sourceTree = "<group>"; };
+		B2F4A1F31AC906000022ACA5 /* NSObject+KTModelHelperMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KTModelHelperMember.h"; sourceTree = "<group>"; };
+		B2F4A1F41AC906000022ACA5 /* NSObject+KTModelHelperMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KTModelHelperMember.m"; sourceTree = "<group>"; };
+		B2F4A1F51AC906000022ACA5 /* KTplayBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTplayBusiness.h; sourceTree = "<group>"; };
+		B2F4A1F71AC906000022ACA5 /* KTAlphaValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAlphaValidator.h; sourceTree = "<group>"; };
+		B2F4A1F81AC906000022ACA5 /* KTAlphaValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAlphaValidator.m; sourceTree = "<group>"; };
+		B2F4A1F91AC906000022ACA5 /* KTEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTEmailValidator.h; sourceTree = "<group>"; };
+		B2F4A1FA1AC906000022ACA5 /* KTEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTEmailValidator.m; sourceTree = "<group>"; };
+		B2F4A1FB1AC906000022ACA5 /* KTLengthValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLengthValidator.h; sourceTree = "<group>"; };
+		B2F4A1FC1AC906000022ACA5 /* KTLengthValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLengthValidator.m; sourceTree = "<group>"; };
+		B2F4A1FD1AC906000022ACA5 /* KTNumericValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTNumericValidator.h; sourceTree = "<group>"; };
+		B2F4A1FE1AC906000022ACA5 /* KTNumericValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTNumericValidator.m; sourceTree = "<group>"; };
+		B2F4A1FF1AC906000022ACA5 /* KTRangeValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTRangeValidator.h; sourceTree = "<group>"; };
+		B2F4A2001AC906000022ACA5 /* KTRangeValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTRangeValidator.m; sourceTree = "<group>"; };
+		B2F4A2011AC906000022ACA5 /* KTRegexValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTRegexValidator.h; sourceTree = "<group>"; };
+		B2F4A2021AC906000022ACA5 /* KTRegexValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTRegexValidator.m; sourceTree = "<group>"; };
+		B2F4A2031AC906000022ACA5 /* KTRequiredValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTRequiredValidator.h; sourceTree = "<group>"; };
+		B2F4A2041AC906000022ACA5 /* KTRequiredValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTRequiredValidator.m; sourceTree = "<group>"; };
+		B2F4A2051AC906000022ACA5 /* KTValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTValidator.h; sourceTree = "<group>"; };
+		B2F4A2061AC906000022ACA5 /* KTValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTValidator.m; sourceTree = "<group>"; };
+		B2F4A2071AC906000022ACA5 /* KTValidators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTValidators.h; sourceTree = "<group>"; };
+		B2F4A20A1AC906000022ACA5 /* KTCommunityApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCommunityApi.h; sourceTree = "<group>"; };
+		B2F4A20B1AC906000022ACA5 /* KTCommunityApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTCommunityApi.m; sourceTree = "<group>"; };
+		B2F4A20C1AC906000022ACA5 /* KTCommunityApiDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCommunityApiDefines.h; sourceTree = "<group>"; };
+		B2F4A20E1AC906000022ACA5 /* KTModelContactBookPeople.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelContactBookPeople.h; sourceTree = "<group>"; };
+		B2F4A20F1AC906000022ACA5 /* KTModelContactBookPeople.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelContactBookPeople.m; sourceTree = "<group>"; };
+		B2F4A2101AC906000022ACA5 /* KTModelHomePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelHomePage.h; sourceTree = "<group>"; };
+		B2F4A2111AC906000022ACA5 /* KTModelHomePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelHomePage.m; sourceTree = "<group>"; };
+		B2F4A2121AC906000022ACA5 /* KTModelReply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelReply.h; sourceTree = "<group>"; };
+		B2F4A2131AC906000022ACA5 /* KTModelReply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelReply.m; sourceTree = "<group>"; };
+		B2F4A2141AC906000022ACA5 /* KTModelTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelTopic.h; sourceTree = "<group>"; };
+		B2F4A2151AC906000022ACA5 /* KTModelTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelTopic.m; sourceTree = "<group>"; };
+		B2F4A2161AC906000022ACA5 /* KTModelTopicActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelTopicActivity.h; sourceTree = "<group>"; };
+		B2F4A2171AC906000022ACA5 /* KTModelTopicActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelTopicActivity.m; sourceTree = "<group>"; };
+		B2F4A21A1AC906000022ACA5 /* KTFriendApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTFriendApi.h; sourceTree = "<group>"; };
+		B2F4A21B1AC906000022ACA5 /* KTFriendApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTFriendApi.m; sourceTree = "<group>"; };
+		B2F4A21C1AC906000022ACA5 /* KTFriendApiDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTFriendApiDefines.h; sourceTree = "<group>"; };
+		B2F4A21E1AC906000022ACA5 /* KTModelFriendship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelFriendship.h; sourceTree = "<group>"; };
+		B2F4A21F1AC906000022ACA5 /* KTModelFriendship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelFriendship.m; sourceTree = "<group>"; };
+		B2F4A2201AC906000022ACA5 /* KTModelFriendshipRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelFriendshipRequest.h; sourceTree = "<group>"; };
+		B2F4A2211AC906000022ACA5 /* KTModelFriendshipRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelFriendshipRequest.m; sourceTree = "<group>"; };
+		B2F4A2241AC906000022ACA5 /* KTInboxApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInboxApi.h; sourceTree = "<group>"; };
+		B2F4A2251AC906000022ACA5 /* KTInboxApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTInboxApi.m; sourceTree = "<group>"; };
+		B2F4A2261AC906000022ACA5 /* KTInboxApiDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInboxApiDefines.h; sourceTree = "<group>"; };
+		B2F4A2281AC906000022ACA5 /* KTModelDeepLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelDeepLink.h; sourceTree = "<group>"; };
+		B2F4A2291AC906000022ACA5 /* KTModelDeepLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelDeepLink.m; sourceTree = "<group>"; };
+		B2F4A22A1AC906000022ACA5 /* KTModelNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelNotice.h; sourceTree = "<group>"; };
+		B2F4A22B1AC906000022ACA5 /* KTModelNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelNotice.m; sourceTree = "<group>"; };
+		B2F4A22C1AC906000022ACA5 /* KTModelReward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelReward.h; sourceTree = "<group>"; };
+		B2F4A22D1AC906000022ACA5 /* KTModelReward.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelReward.m; sourceTree = "<group>"; };
+		B2F4A2301AC906000022ACA5 /* KTLeaderboardApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLeaderboardApi.h; sourceTree = "<group>"; };
+		B2F4A2311AC906000022ACA5 /* KTLeaderboardApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLeaderboardApi.m; sourceTree = "<group>"; };
+		B2F4A2321AC906000022ACA5 /* KTLeaderboardApiDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLeaderboardApiDefines.h; sourceTree = "<group>"; };
+		B2F4A2341AC906000022ACA5 /* KTModelLeaderboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTModelLeaderboard.h; sourceTree = "<group>"; };
+		B2F4A2351AC906000022ACA5 /* KTModelLeaderboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTModelLeaderboard.m; sourceTree = "<group>"; };
+		B2F4A2681AC906100022ACA5 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		B2F4A2691AC906100022ACA5 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		B2F4A26A1AC906100022ACA5 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		B2F4A26B1AC906100022ACA5 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		B2F4A26C1AC906100022ACA5 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		B2F4A26D1AC906100022ACA5 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		B2F4A26E1AC906100022ACA5 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		B2F4A26F1AC906100022ACA5 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		B2F4A2701AC906100022ACA5 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		B2F4A2711AC906100022ACA5 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAFNetworking.a; sourceTree = "<group>"; };
+		B2F4A2721AC906100022ACA5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B2F4A2731AC906100022ACA5 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		B2F4A2751AC906100022ACA5 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		B2F4A2761AC906100022ACA5 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		B2F4A2771AC906100022ACA5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B2F4A3091AC958FA0022ACA5 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		B2F4A30A1AC958FA0022ACA5 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		B2F4A30B1AC958FA0022ACA5 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		B2F4A30C1AC958FA0022ACA5 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		B2F4A30D1AC958FA0022ACA5 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		B2F4A30E1AC958FA0022ACA5 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		B2F4A30F1AC958FA0022ACA5 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		B2F4A3101AC958FA0022ACA5 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		B2F4A3111AC958FA0022ACA5 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		B2F4A3121AC958FA0022ACA5 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		B2F4A3131AC958FA0022ACA5 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		B2F4A3141AC958FA0022ACA5 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		B2F4A3151AC958FA0022ACA5 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		B2F4A3161AC958FA0022ACA5 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		B2F4A3171AC958FA0022ACA5 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		B2F4A3181AC958FA0022ACA5 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		B2F4A3191AC958FA0022ACA5 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		B2F4A31A1AC958FA0022ACA5 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		B2F4A31B1AC958FA0022ACA5 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		B2F4A31C1AC958FA0022ACA5 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		B2F4A31D1AC958FA0022ACA5 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		B2F4A31E1AC958FA0022ACA5 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		B2F4A31F1AC958FA0022ACA5 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2F4A0D71AC901D70022ACA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F4A2781AC906100022ACA5 /* libAFNetworking.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F4A0E21AC901D70022ACA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F4A0E61AC901D70022ACA5 /* libKTAppFrame.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B9995502EB393BB139B961F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16FA43986FDA3819A85A6DAB /* libPods-KTAppFrame.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2F4A0D11AC901D70022ACA5 = {
+			isa = PBXGroup;
+			children = (
+				B2F4A0DC1AC901D70022ACA5 /* KTAppFrame */,
+				B2F4A0E91AC901D70022ACA5 /* KTAppFrameTests */,
+				B2F4A0DB1AC901D70022ACA5 /* Products */,
+				1B9995502EB393BB139B961F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B2F4A0DB1AC901D70022ACA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A0DA1AC901D70022ACA5 /* libKTAppFrame.a */,
+				B2F4A0E51AC901D70022ACA5 /* KTAppFrameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2F4A0DC1AC901D70022ACA5 /* KTAppFrame */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2661AC906100022ACA5 /* 3rd */,
+				B2F4A1B41AC906000022ACA5 /* KTModule */,
+				B2F4A0DD1AC901D70022ACA5 /* KTAppFrame.h */,
+				B2F4A0DF1AC901D70022ACA5 /* KTAppFrame.m */,
+			);
+			path = KTAppFrame;
+			sourceTree = "<group>";
+		};
+		B2F4A0E91AC901D70022ACA5 /* KTAppFrameTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A0EA1AC901D70022ACA5 /* Supporting Files */,
+			);
+			path = KTAppFrameTests;
+			sourceTree = "<group>";
+		};
+		B2F4A0EA1AC901D70022ACA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A0EB1AC901D70022ACA5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2F4A1B41AC906000022ACA5 /* KTModule */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A1B51AC906000022ACA5 /* KTAccount */,
+				B2F4A1C41AC906000022ACA5 /* KTBase */,
+				B2F4A1D71AC906000022ACA5 /* KTBusiness */,
+				B2F4A2081AC906000022ACA5 /* KTCommunity */,
+				B2F4A2181AC906000022ACA5 /* KTFriend */,
+				B2F4A2221AC906000022ACA5 /* KTInbox */,
+				B2F4A22E1AC906000022ACA5 /* KTLeaderboard */,
+			);
+			path = KTModule;
+			sourceTree = "<group>";
+		};
+		B2F4A1B51AC906000022ACA5 /* KTAccount */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A1B61AC906000022ACA5 /* API */,
+				B2F4A1BD1AC906000022ACA5 /* Model */,
+			);
+			path = KTAccount;
+			sourceTree = "<group>";
+		};
+		B2F4A1B61AC906000022ACA5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A1B71AC906000022ACA5 /* KTAccountApi.h */,
+				B2F4A1B81AC906000022ACA5 /* KTAccountApi.m */,
+				B2F4A1B91AC906000022ACA5 /* KTAccountApiDefines.h */,
+				B2F4A1BA1AC906000022ACA5 /* KTUserApi.h */,
+				B2F4A1BB1AC906000022ACA5 /* KTUserApi.m */,
+				B2F4A1BC1AC906000022ACA5 /* KTUserApiDefines.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B2F4A1BD1AC906000022ACA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A1BE1AC906000022ACA5 /* KTModelAccount.h */,
+				B2F4A1BF1AC906000022ACA5 /* KTModelAccount.m */,
+				B2F4A1C01AC906000022ACA5 /* KTModelGamequery.h */,
+				B2F4A1C11AC906000022ACA5 /* KTModelGamequery.m */,
+				B2F4A1C21AC906000022ACA5 /* KTModelUser.h */,
+				B2F4A1C31AC906000022ACA5 /* KTModelUser.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2F4A1C41AC906000022ACA5 /* KTBase */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A1C51AC906000022ACA5 /* API */,
+				B2F4A1C91AC906000022ACA5 /* Model */,
+			);
+			path = KTBase;
+			sourceTree = "<group>";
+		};
+		B2F4A1C51AC906000022ACA5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A1C61AC906000022ACA5 /* KTBaseApi.h */,
+				B2F4A1C71AC906000022ACA5 /* KTBaseApi.m */,
+				B2F4A1C81AC906000022ACA5 /* KTCommonApiDefines.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B2F4A1C91AC906000022ACA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A1CA1AC906000022ACA5 /* KTModel.h */,
+				B2F4A1CB1AC906000022ACA5 /* KTModel.m */,
+				B2F4A1CC1AC906000022ACA5 /* KTModelBaseInfo.h */,
+				B2F4A1CD1AC906000022ACA5 /* KTModelBaseInfo.m */,
+				B2F4A1CE1AC906000022ACA5 /* KTModelGame.h */,
+				B2F4A1CF1AC906000022ACA5 /* KTModelGame.m */,
+				B2F4A1D01AC906000022ACA5 /* KTModelImage.h */,
+				B2F4A1D11AC906000022ACA5 /* KTModelImage.m */,
+				B2F4A1D21AC906000022ACA5 /* KTModelMappingDefines.h */,
+				B2F4A1D31AC906000022ACA5 /* KTModelRedeemReward.h */,
+				B2F4A1D41AC906000022ACA5 /* KTModelRedeemReward.m */,
+				B2F4A1D51AC906000022ACA5 /* KTModelSuccess.h */,
+				B2F4A1D61AC906000022ACA5 /* KTModelSuccess.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2F4A1D71AC906000022ACA5 /* KTBusiness */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A1D81AC906000022ACA5 /* KTApi.h */,
+				B2F4A1D91AC906000022ACA5 /* KTApi.m */,
+				B2F4A1DA1AC906000022ACA5 /* KTApiClient.h */,
+				B2F4A1DB1AC906000022ACA5 /* KTApiClient.m */,
+				B2F4A1DC1AC906000022ACA5 /* KTApiResponse.h */,
+				B2F4A1DD1AC906000022ACA5 /* KTApiResponse.m */,
+				B2F4A1DE1AC906000022ACA5 /* KTModelHelper */,
+				B2F4A1F51AC906000022ACA5 /* KTplayBusiness.h */,
+				B2F4A1F61AC906000022ACA5 /* KTValidators */,
+			);
+			path = KTBusiness;
+			sourceTree = "<group>";
+		};
+		B2F4A1DE1AC906000022ACA5 /* KTModelHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A1DF1AC906000022ACA5 /* KTModeHelperIvar.h */,
+				B2F4A1E01AC906000022ACA5 /* KTModeHelperIvar.m */,
+				B2F4A1E11AC906000022ACA5 /* KTModeHelperMethod.h */,
+				B2F4A1E21AC906000022ACA5 /* KTModeHelperMethod.m */,
+				B2F4A1E31AC906000022ACA5 /* KTModelHelpArgument.h */,
+				B2F4A1E41AC906000022ACA5 /* KTModelHelpArgument.m */,
+				B2F4A1E51AC906000022ACA5 /* KTModelHelperConst.h */,
+				B2F4A1E61AC906000022ACA5 /* KTModelHelperExtension.h */,
+				B2F4A1E71AC906000022ACA5 /* KTModelHelperFoundation.h */,
+				B2F4A1E81AC906000022ACA5 /* KTModelHelperFoundation.m */,
+				B2F4A1E91AC906000022ACA5 /* KTModelHelperMember.h */,
+				B2F4A1EA1AC906000022ACA5 /* KTModelHelperMember.m */,
+				B2F4A1EB1AC906000022ACA5 /* KTModelHelperType.h */,
+				B2F4A1EC1AC906000022ACA5 /* KTModelHelperType.m */,
+				B2F4A1ED1AC906000022ACA5 /* KTModelHelperTypeEncoding.h */,
+				B2F4A1EE1AC906000022ACA5 /* KTModelHelperTypeEncoding.m */,
+				B2F4A1EF1AC906000022ACA5 /* NSObject+KTModelHelperCoding.h */,
+				B2F4A1F01AC906000022ACA5 /* NSObject+KTModelHelperCoding.m */,
+				B2F4A1F11AC906000022ACA5 /* NSObject+KTModelHelperKeyValue.h */,
+				B2F4A1F21AC906000022ACA5 /* NSObject+KTModelHelperKeyValue.m */,
+				B2F4A1F31AC906000022ACA5 /* NSObject+KTModelHelperMember.h */,
+				B2F4A1F41AC906000022ACA5 /* NSObject+KTModelHelperMember.m */,
+			);
+			path = KTModelHelper;
+			sourceTree = "<group>";
+		};
+		B2F4A1F61AC906000022ACA5 /* KTValidators */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A1F71AC906000022ACA5 /* KTAlphaValidator.h */,
+				B2F4A1F81AC906000022ACA5 /* KTAlphaValidator.m */,
+				B2F4A1F91AC906000022ACA5 /* KTEmailValidator.h */,
+				B2F4A1FA1AC906000022ACA5 /* KTEmailValidator.m */,
+				B2F4A1FB1AC906000022ACA5 /* KTLengthValidator.h */,
+				B2F4A1FC1AC906000022ACA5 /* KTLengthValidator.m */,
+				B2F4A1FD1AC906000022ACA5 /* KTNumericValidator.h */,
+				B2F4A1FE1AC906000022ACA5 /* KTNumericValidator.m */,
+				B2F4A1FF1AC906000022ACA5 /* KTRangeValidator.h */,
+				B2F4A2001AC906000022ACA5 /* KTRangeValidator.m */,
+				B2F4A2011AC906000022ACA5 /* KTRegexValidator.h */,
+				B2F4A2021AC906000022ACA5 /* KTRegexValidator.m */,
+				B2F4A2031AC906000022ACA5 /* KTRequiredValidator.h */,
+				B2F4A2041AC906000022ACA5 /* KTRequiredValidator.m */,
+				B2F4A2051AC906000022ACA5 /* KTValidator.h */,
+				B2F4A2061AC906000022ACA5 /* KTValidator.m */,
+				B2F4A2071AC906000022ACA5 /* KTValidators.h */,
+			);
+			path = KTValidators;
+			sourceTree = "<group>";
+		};
+		B2F4A2081AC906000022ACA5 /* KTCommunity */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2091AC906000022ACA5 /* API */,
+				B2F4A20D1AC906000022ACA5 /* Model */,
+			);
+			path = KTCommunity;
+			sourceTree = "<group>";
+		};
+		B2F4A2091AC906000022ACA5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A20A1AC906000022ACA5 /* KTCommunityApi.h */,
+				B2F4A20B1AC906000022ACA5 /* KTCommunityApi.m */,
+				B2F4A20C1AC906000022ACA5 /* KTCommunityApiDefines.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B2F4A20D1AC906000022ACA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A20E1AC906000022ACA5 /* KTModelContactBookPeople.h */,
+				B2F4A20F1AC906000022ACA5 /* KTModelContactBookPeople.m */,
+				B2F4A2101AC906000022ACA5 /* KTModelHomePage.h */,
+				B2F4A2111AC906000022ACA5 /* KTModelHomePage.m */,
+				B2F4A2121AC906000022ACA5 /* KTModelReply.h */,
+				B2F4A2131AC906000022ACA5 /* KTModelReply.m */,
+				B2F4A2141AC906000022ACA5 /* KTModelTopic.h */,
+				B2F4A2151AC906000022ACA5 /* KTModelTopic.m */,
+				B2F4A2161AC906000022ACA5 /* KTModelTopicActivity.h */,
+				B2F4A2171AC906000022ACA5 /* KTModelTopicActivity.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2F4A2181AC906000022ACA5 /* KTFriend */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2191AC906000022ACA5 /* API */,
+				B2F4A21D1AC906000022ACA5 /* Model */,
+			);
+			path = KTFriend;
+			sourceTree = "<group>";
+		};
+		B2F4A2191AC906000022ACA5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A21A1AC906000022ACA5 /* KTFriendApi.h */,
+				B2F4A21B1AC906000022ACA5 /* KTFriendApi.m */,
+				B2F4A21C1AC906000022ACA5 /* KTFriendApiDefines.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B2F4A21D1AC906000022ACA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A21E1AC906000022ACA5 /* KTModelFriendship.h */,
+				B2F4A21F1AC906000022ACA5 /* KTModelFriendship.m */,
+				B2F4A2201AC906000022ACA5 /* KTModelFriendshipRequest.h */,
+				B2F4A2211AC906000022ACA5 /* KTModelFriendshipRequest.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2F4A2221AC906000022ACA5 /* KTInbox */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2231AC906000022ACA5 /* API */,
+				B2F4A2271AC906000022ACA5 /* Model */,
+			);
+			path = KTInbox;
+			sourceTree = "<group>";
+		};
+		B2F4A2231AC906000022ACA5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2241AC906000022ACA5 /* KTInboxApi.h */,
+				B2F4A2251AC906000022ACA5 /* KTInboxApi.m */,
+				B2F4A2261AC906000022ACA5 /* KTInboxApiDefines.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B2F4A2271AC906000022ACA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2281AC906000022ACA5 /* KTModelDeepLink.h */,
+				B2F4A2291AC906000022ACA5 /* KTModelDeepLink.m */,
+				B2F4A22A1AC906000022ACA5 /* KTModelNotice.h */,
+				B2F4A22B1AC906000022ACA5 /* KTModelNotice.m */,
+				B2F4A22C1AC906000022ACA5 /* KTModelReward.h */,
+				B2F4A22D1AC906000022ACA5 /* KTModelReward.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2F4A22E1AC906000022ACA5 /* KTLeaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A22F1AC906000022ACA5 /* API */,
+				B2F4A2331AC906000022ACA5 /* Model */,
+			);
+			path = KTLeaderboard;
+			sourceTree = "<group>";
+		};
+		B2F4A22F1AC906000022ACA5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2301AC906000022ACA5 /* KTLeaderboardApi.h */,
+				B2F4A2311AC906000022ACA5 /* KTLeaderboardApi.m */,
+				B2F4A2321AC906000022ACA5 /* KTLeaderboardApiDefines.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B2F4A2331AC906000022ACA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2341AC906000022ACA5 /* KTModelLeaderboard.h */,
+				B2F4A2351AC906000022ACA5 /* KTModelLeaderboard.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2F4A2661AC906100022ACA5 /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A3081AC958FA0022ACA5 /* Masonry */,
+				B2F4A2671AC906100022ACA5 /* AFNetworking */,
+				B2F4A2741AC906100022ACA5 /* OpenUDID */,
+			);
+			path = 3rd;
+			sourceTree = "<group>";
+		};
+		B2F4A2671AC906100022ACA5 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2681AC906100022ACA5 /* AFHTTPClient.h */,
+				B2F4A2691AC906100022ACA5 /* AFHTTPRequestOperation.h */,
+				B2F4A26A1AC906100022ACA5 /* AFImageRequestOperation.h */,
+				B2F4A26B1AC906100022ACA5 /* AFJSONRequestOperation.h */,
+				B2F4A26C1AC906100022ACA5 /* AFNetworkActivityIndicatorManager.h */,
+				B2F4A26D1AC906100022ACA5 /* AFNetworking.h */,
+				B2F4A26E1AC906100022ACA5 /* AFPropertyListRequestOperation.h */,
+				B2F4A26F1AC906100022ACA5 /* AFURLConnectionOperation.h */,
+				B2F4A2701AC906100022ACA5 /* AFXMLRequestOperation.h */,
+				B2F4A2711AC906100022ACA5 /* libAFNetworking.a */,
+				B2F4A2721AC906100022ACA5 /* LICENSE */,
+				B2F4A2731AC906100022ACA5 /* UIImageView+AFNetworking.h */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		B2F4A2741AC906100022ACA5 /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A2751AC906100022ACA5 /* OpenUDID.h */,
+				B2F4A2761AC906100022ACA5 /* OpenUDID.m */,
+				B2F4A2771AC906100022ACA5 /* README.md */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		B2F4A3081AC958FA0022ACA5 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				B2F4A3091AC958FA0022ACA5 /* MASCompositeConstraint.h */,
+				B2F4A30A1AC958FA0022ACA5 /* MASCompositeConstraint.m */,
+				B2F4A30B1AC958FA0022ACA5 /* MASConstraint+Private.h */,
+				B2F4A30C1AC958FA0022ACA5 /* MASConstraint.h */,
+				B2F4A30D1AC958FA0022ACA5 /* MASConstraint.m */,
+				B2F4A30E1AC958FA0022ACA5 /* MASConstraintMaker.h */,
+				B2F4A30F1AC958FA0022ACA5 /* MASConstraintMaker.m */,
+				B2F4A3101AC958FA0022ACA5 /* MASLayoutConstraint.h */,
+				B2F4A3111AC958FA0022ACA5 /* MASLayoutConstraint.m */,
+				B2F4A3121AC958FA0022ACA5 /* Masonry.h */,
+				B2F4A3131AC958FA0022ACA5 /* MASUtilities.h */,
+				B2F4A3141AC958FA0022ACA5 /* MASViewAttribute.h */,
+				B2F4A3151AC958FA0022ACA5 /* MASViewAttribute.m */,
+				B2F4A3161AC958FA0022ACA5 /* MASViewConstraint.h */,
+				B2F4A3171AC958FA0022ACA5 /* MASViewConstraint.m */,
+				B2F4A3181AC958FA0022ACA5 /* NSArray+MASAdditions.h */,
+				B2F4A3191AC958FA0022ACA5 /* NSArray+MASAdditions.m */,
+				B2F4A31A1AC958FA0022ACA5 /* NSArray+MASShorthandAdditions.h */,
+				B2F4A31B1AC958FA0022ACA5 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				B2F4A31C1AC958FA0022ACA5 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				B2F4A31D1AC958FA0022ACA5 /* View+MASAdditions.h */,
+				B2F4A31E1AC958FA0022ACA5 /* View+MASAdditions.m */,
+				B2F4A31F1AC958FA0022ACA5 /* View+MASShorthandAdditions.h */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2F4A0D91AC901D70022ACA5 /* KTAppFrame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2F4A0EE1AC901D70022ACA5 /* Build configuration list for PBXNativeTarget "KTAppFrame" */;
+			buildPhases = (
+				B2F4A0D61AC901D70022ACA5 /* Sources */,
+				B2F4A0D71AC901D70022ACA5 /* Frameworks */,
+				B2F4A0D81AC901D70022ACA5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KTAppFrame;
+			productName = KTAppFrame;
+			productReference = B2F4A0DA1AC901D70022ACA5 /* libKTAppFrame.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B2F4A0E41AC901D70022ACA5 /* KTAppFrameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2F4A0F11AC901D70022ACA5 /* Build configuration list for PBXNativeTarget "KTAppFrameTests" */;
+			buildPhases = (
+				B2F4A0E11AC901D70022ACA5 /* Sources */,
+				B2F4A0E21AC901D70022ACA5 /* Frameworks */,
+				B2F4A0E31AC901D70022ACA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2F4A0E81AC901D70022ACA5 /* PBXTargetDependency */,
+			);
+			name = KTAppFrameTests;
+			productName = KTAppFrameTests;
+			productReference = B2F4A0E51AC901D70022ACA5 /* KTAppFrameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2F4A0D21AC901D70022ACA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = jayden;
+				TargetAttributes = {
+					B2F4A0D91AC901D70022ACA5 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					B2F4A0E41AC901D70022ACA5 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = B2F4A0D51AC901D70022ACA5 /* Build configuration list for PBXProject "KTAppFrame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B2F4A0D11AC901D70022ACA5;
+			productRefGroup = B2F4A0DB1AC901D70022ACA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2F4A0D91AC901D70022ACA5 /* KTAppFrame */,
+				B2F4A0E41AC901D70022ACA5 /* KTAppFrameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2F4A0E31AC901D70022ACA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2F4A0D61AC901D70022ACA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F4A23E1AC906000022ACA5 /* KTModelGame.m in Sources */,
+				B2F4A2421AC906000022ACA5 /* KTApi.m in Sources */,
+				B2F4A24E1AC906000022ACA5 /* NSObject+KTModelHelperMember.m in Sources */,
+				B2F4A3251AC958FA0022ACA5 /* MASViewConstraint.m in Sources */,
+				B2F4A2441AC906000022ACA5 /* KTApiResponse.m in Sources */,
+				B2F4A3201AC958FA0022ACA5 /* MASCompositeConstraint.m in Sources */,
+				B2F4A24B1AC906000022ACA5 /* KTModelHelperTypeEncoding.m in Sources */,
+				B2F4A3271AC958FA0022ACA5 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				B2F4A3281AC958FA0022ACA5 /* View+MASAdditions.m in Sources */,
+				B2F4A2521AC906000022ACA5 /* KTNumericValidator.m in Sources */,
+				B2F4A3231AC958FA0022ACA5 /* MASLayoutConstraint.m in Sources */,
+				B2F4A2451AC906000022ACA5 /* KTModeHelperIvar.m in Sources */,
+				B2F4A23F1AC906000022ACA5 /* KTModelImage.m in Sources */,
+				B2F4A25D1AC906000022ACA5 /* KTFriendApi.m in Sources */,
+				B2F4A2391AC906000022ACA5 /* KTModelGamequery.m in Sources */,
+				B2F4A2401AC906000022ACA5 /* KTModelRedeemReward.m in Sources */,
+				B2F4A2641AC906000022ACA5 /* KTLeaderboardApi.m in Sources */,
+				B2F4A23B1AC906000022ACA5 /* KTBaseApi.m in Sources */,
+				B2F4A2601AC906000022ACA5 /* KTInboxApi.m in Sources */,
+				B2F4A23A1AC906000022ACA5 /* KTModelUser.m in Sources */,
+				B2F4A25F1AC906000022ACA5 /* KTModelFriendshipRequest.m in Sources */,
+				B2F4A2381AC906000022ACA5 /* KTModelAccount.m in Sources */,
+				B2F4A25C1AC906000022ACA5 /* KTModelTopicActivity.m in Sources */,
+				B2F4A2541AC906000022ACA5 /* KTRegexValidator.m in Sources */,
+				B2F4A2471AC906000022ACA5 /* KTModelHelpArgument.m in Sources */,
+				B2F4A23C1AC906000022ACA5 /* KTModel.m in Sources */,
+				B2F4A2611AC906000022ACA5 /* KTModelDeepLink.m in Sources */,
+				B2F4A0E01AC901D70022ACA5 /* KTAppFrame.m in Sources */,
+				B2F4A2651AC906000022ACA5 /* KTModelLeaderboard.m in Sources */,
+				B2F4A23D1AC906000022ACA5 /* KTModelBaseInfo.m in Sources */,
+				B2F4A25E1AC906000022ACA5 /* KTModelFriendship.m in Sources */,
+				B2F4A24F1AC906000022ACA5 /* KTAlphaValidator.m in Sources */,
+				B2F4A3241AC958FA0022ACA5 /* MASViewAttribute.m in Sources */,
+				B2F4A2561AC906000022ACA5 /* KTValidator.m in Sources */,
+				B2F4A2431AC906000022ACA5 /* KTApiClient.m in Sources */,
+				B2F4A24C1AC906000022ACA5 /* NSObject+KTModelHelperCoding.m in Sources */,
+				B2F4A2511AC906000022ACA5 /* KTLengthValidator.m in Sources */,
+				B2F4A25A1AC906000022ACA5 /* KTModelReply.m in Sources */,
+				B2F4A3261AC958FA0022ACA5 /* NSArray+MASAdditions.m in Sources */,
+				B2F4A2461AC906000022ACA5 /* KTModeHelperMethod.m in Sources */,
+				B2F4A2551AC906000022ACA5 /* KTRequiredValidator.m in Sources */,
+				B2F4A25B1AC906000022ACA5 /* KTModelTopic.m in Sources */,
+				B2F4A2531AC906000022ACA5 /* KTRangeValidator.m in Sources */,
+				B2F4A24A1AC906000022ACA5 /* KTModelHelperType.m in Sources */,
+				B2F4A2411AC906000022ACA5 /* KTModelSuccess.m in Sources */,
+				B2F4A2501AC906000022ACA5 /* KTEmailValidator.m in Sources */,
+				B2F4A2491AC906000022ACA5 /* KTModelHelperMember.m in Sources */,
+				B2F4A3221AC958FA0022ACA5 /* MASConstraintMaker.m in Sources */,
+				B2F4A2631AC906000022ACA5 /* KTModelReward.m in Sources */,
+				B2F4A2571AC906000022ACA5 /* KTCommunityApi.m in Sources */,
+				B2F4A24D1AC906000022ACA5 /* NSObject+KTModelHelperKeyValue.m in Sources */,
+				B2F4A2361AC906000022ACA5 /* KTAccountApi.m in Sources */,
+				B2F4A2581AC906000022ACA5 /* KTModelContactBookPeople.m in Sources */,
+				B2F4A27A1AC906100022ACA5 /* README.md in Sources */,
+				B2F4A2621AC906000022ACA5 /* KTModelNotice.m in Sources */,
+				B2F4A2371AC906000022ACA5 /* KTUserApi.m in Sources */,
+				B2F4A2481AC906000022ACA5 /* KTModelHelperFoundation.m in Sources */,
+				B2F4A2591AC906000022ACA5 /* KTModelHomePage.m in Sources */,
+				B2F4A3211AC958FA0022ACA5 /* MASConstraint.m in Sources */,
+				B2F4A2791AC906100022ACA5 /* OpenUDID.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F4A0E11AC901D70022ACA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2F4A0E81AC901D70022ACA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2F4A0D91AC901D70022ACA5 /* KTAppFrame */;
+			targetProxy = B2F4A0E71AC901D70022ACA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B2F4A0EC1AC901D70022ACA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B2F4A0ED1AC901D70022ACA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2F4A0EF1AC901D70022ACA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(inherited)/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KTAppFrame/3rd/AFNetworking",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B2F4A0F01AC901D70022ACA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(inherited)/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KTAppFrame/3rd/AFNetworking",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B2F4A0F21AC901D70022ACA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KTAppFrameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B2F4A0F31AC901D70022ACA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KTAppFrameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2F4A0D51AC901D70022ACA5 /* Build configuration list for PBXProject "KTAppFrame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F4A0EC1AC901D70022ACA5 /* Debug */,
+				B2F4A0ED1AC901D70022ACA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2F4A0EE1AC901D70022ACA5 /* Build configuration list for PBXNativeTarget "KTAppFrame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F4A0EF1AC901D70022ACA5 /* Debug */,
+				B2F4A0F01AC901D70022ACA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2F4A0F11AC901D70022ACA5 /* Build configuration list for PBXNativeTarget "KTAppFrameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F4A0F21AC901D70022ACA5 /* Debug */,
+				B2F4A0F31AC901D70022ACA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2F4A0D21AC901D70022ACA5 /* Project object */;
+}
