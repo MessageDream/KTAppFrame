@@ -8,6 +8,7 @@
 
 #import "KTAppFrame.h"
 #import "Masonry.h"
+#import "KTDiscussionTabViewController.h"
 
 @implementation KTAppFrame
 -(instancetype)init{
@@ -15,12 +16,12 @@
         CGFloat padding = 20.0;
         CGSize  blankSize = [UIScreen mainScreen].bounds.size;
         self.window = [[UIWindow alloc] initWithFrame:CGRectMake(padding,padding * 2,blankSize.width - 2 * padding, blankSize.height - 4* padding)];
-        self.window.backgroundColor = [UIColor yellowColor];
+        self.window.backgroundColor = [UIColor whiteColor];
         self.window.layer.borderColor = [UIColor blackColor].CGColor;
         self.window.layer.borderWidth = 1;
         self.window.layer.masksToBounds = YES;
         [self.window setWindowLevel:UIWindowLevelAlert];
-        UIViewController * controller = [[UIViewController alloc] init];
+        KTDiscussionTabViewController * controller = [[KTDiscussionTabViewController alloc] init];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
         self.window.rootViewController = navigationController;
     }
@@ -33,8 +34,7 @@
     
     
     UIView *blankView = [[UIView alloc] initWithFrame:baseView.bounds];
-    blankView.backgroundColor = [UIColor blackColor];
-    blankView.layer.opacity = 0.8;
+    blankView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
     
     [baseView addSubview:blankView];
     
