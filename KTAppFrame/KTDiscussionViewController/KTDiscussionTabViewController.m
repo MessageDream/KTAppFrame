@@ -24,7 +24,6 @@
         [self addChildViewController:tabNavigationController];
         tabNavigationController.delegate = self;
     }
-    [UITabBarController]
     return self;
 }
 
