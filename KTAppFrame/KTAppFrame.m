@@ -8,7 +8,7 @@
 
 #import "KTAppFrame.h"
 #import "Masonry.h"
-#import "KTDiscussionTabViewController.h"
+#import "KTMainTabBarController.h"
 
 @implementation KTAppFrame
 -(instancetype)init{
@@ -19,11 +19,8 @@
         self.window.backgroundColor = [UIColor whiteColor];
         self.window.layer.borderColor = [UIColor blackColor].CGColor;
         self.window.layer.borderWidth = 1;
-        self.window.layer.masksToBounds = YES;
+//        self.window.layer.masksToBounds = YES;
         [self.window setWindowLevel:UIWindowLevelAlert];
-        KTDiscussionTabViewController * controller = [[KTDiscussionTabViewController alloc] init];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-        self.window.rootViewController = navigationController;
     }
     return self;
 }
@@ -49,5 +46,7 @@
     //    }];
     
     [self.window makeKeyAndVisible];
+    KTMainTabBarController *mainTabBarViewController = [[KTMainTabBarController alloc]init];
+    self.window.rootViewController = mainTabBarViewController;
 }
 @end

@@ -7,16 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol KTPassValueDelegate <NSObject>
-
--(void)passValue:(id)value;
-
-@end
-
+#import "KTUIViewController+KTCustom.h"
+#import "KTBaseView.h"
 @interface KTBaseViewController : UIViewController<UINavigationControllerDelegate>
-@property(nonatomic,weak)id<KTPassValueDelegate> passValueDelegate;
 
--(void)setNavBarHidden:(BOOL)isHidden;
--(CGRect)getFrame;
 @end

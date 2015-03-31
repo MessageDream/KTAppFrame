@@ -21,19 +21,7 @@
     return self;
 }
 
--(void)setNavBarHidden:(BOOL)isHidden{
-    if (self.navigationController) {
-        self.navigationController.navigationBarHidden = isHidden;
-    }
-}
 
--(CGRect)getFrame{
-    if (self.navigationController){
-        return self.navigationController.view.bounds;
-    }else{
-        return CGRectZero;
-    }
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

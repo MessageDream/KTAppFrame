@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 jayden. All rights reserved.
 //
 
-#import "KTBaseViewController.h"
+#import "KTTabBarController.h"
 
-@interface KTDiscussionTabViewController : KTBaseViewController
+@interface KTDiscussionTabBarController :KTTabBarController
 
 @end
