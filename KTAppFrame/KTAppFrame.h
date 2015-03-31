@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface KTAppFrame : NSObject
-@property (strong, nonatomic) UIWindow *window;
-
--(void)show;
++(KTAppFrame *) instance;
+-(void)showInController:(UIViewController *)contrroller;
 @end

@@ -56,9 +56,9 @@
     }];
     
     [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(ws.view.frame.size.width,  ws.ktTabBar.barWidth));
-        make.top.equalTo(ws.view).mas_offset(-ws.ktTabBar.barWidth);
-        make.centerX.mas_equalTo(ws.view.mas_centerX);
+        make.size.mas_equalTo(CGSizeMake(ws.view.superview.frame.size.width,  ws.ktTabBar.barWidth));
+        make.top.equalTo(ws.view.superview);
+        make.centerX.mas_equalTo(ws.view.superview.mas_centerX);
     }];
 }
 

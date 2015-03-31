@@ -30,8 +30,8 @@
 }
 
 -(void)startKt:(id)sender{
-    KTAppFrame *frame = [[KTAppFrame alloc] init];
-    [frame show];
+    KTAppFrame *frame = [KTAppFrame instance];
+    [frame showInController:self];
 }
 
 - (void)didReceiveMemoryWarning {

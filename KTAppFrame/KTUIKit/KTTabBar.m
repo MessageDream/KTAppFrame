@@ -449,6 +449,12 @@
 
 }
 
-
+-(void)dealloc{
+    for (NSUInteger i = 0; i < self.items.count; i++) {
+        KTTabBarItem * item = [self.items objectAtIndex:i];
+        [item removeObserver:self forKeyPath:@"badgeValue"];
+        [item removeObserver:self forKeyPath:@"frontImage"];
+    }
+}
 
 @end

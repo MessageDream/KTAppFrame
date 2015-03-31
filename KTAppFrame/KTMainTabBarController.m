@@ -69,65 +69,39 @@
     CGSize size = self.view.superview.frame.size;
     self.ktTabBar.barWidth = 50;
     WS(ws);
-//    if (self.view.frame.size.height > self.view.frame.size.width) {
-//        self.ktTabBar.isLandscape = YES;
-//        [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(ws.view.superview);
-//            make.centerX.mas_equalTo(ws.view.superview.mas_centerX);
-//            make.size.mas_equalTo(CGSizeMake(size.width, size.height -  ws.ktTabBar.barWidth));
-//        }];
-//        
-//        [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(CGSizeMake(ws.view.frame.size.width,  ws.ktTabBar.barWidth));
-//            make.bottom.equalTo(ws.view).mas_offset(ws.ktTabBar.barWidth);
-//            make.centerX.mas_equalTo(ws.view.mas_centerX);
-//        }];
-//    }else{
-//        self.ktTabBar.isLandscape = NO;
-//        [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.right.mas_equalTo(ws.view.superview);
-//            make.centerY.mas_equalTo(ws.view.superview.mas_centerY);
-//            make.size.mas_equalTo(CGSizeMake(size.width - ws.ktTabBar.barWidth, size.height));
-//        }];
-//        
-//        [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.left.equalTo(ws.view).mas_offset(-ws.ktTabBar.barWidth);
-//            make.size.mas_equalTo(CGSizeMake(ws.ktTabBar.barWidth,ws.view.frame.size.height));
-//            make.centerY.mas_equalTo(ws.view.mas_centerY);
-//        }];
-//    }
     if (self.view.frame.size.height > self.view.frame.size.width) {
         self.ktTabBar.isLandscape = YES;
         [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(ws.view.superview);
             make.centerX.mas_equalTo(ws.view.superview.mas_centerX);
-            make.size.mas_equalTo(CGSizeMake(size.width, size.height ));
+            make.size.mas_equalTo(CGSizeMake(size.width, size.height -  ws.ktTabBar.barWidth));
         }];
         
         [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(ws.view.frame.size.width,  ws.ktTabBar.barWidth));
-            make.bottom.equalTo(ws.view);
-            make.centerX.mas_equalTo(ws.view.mas_centerX);
+            make.size.mas_equalTo(CGSizeMake(ws.view.superview.frame.size.width,  ws.ktTabBar.barWidth));
+            make.bottom.equalTo(ws.view.superview);
+            make.centerX.mas_equalTo(ws.view.superview.mas_centerX);
         }];
     }else{
         self.ktTabBar.isLandscape = NO;
         [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(ws.view.superview);
             make.centerY.mas_equalTo(ws.view.superview.mas_centerY);
-            make.size.mas_equalTo(CGSizeMake(size.width , size.height));
+            make.size.mas_equalTo(CGSizeMake(size.width - ws.ktTabBar.barWidth, size.height));
         }];
         
         [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(ws.view);
-            make.size.mas_equalTo(CGSizeMake(ws.ktTabBar.barWidth,ws.view.frame.size.height));
-            make.centerY.mas_equalTo(ws.view.mas_centerY);
+            make.left.equalTo(ws.view.superview);
+            make.size.mas_equalTo(CGSizeMake(ws.ktTabBar.barWidth,ws.view.superview.frame.size.height));
+            make.centerY.mas_equalTo(ws.view.superview.mas_centerY);
         }];
     }
- 
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     self.ktTabBar.selectedIndex = 1;
 }
+-(void)dealloc{
 
+}
 @end
