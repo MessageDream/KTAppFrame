@@ -21,9 +21,9 @@
    
     self.tabBar.hidden =YES;
     KTTabBar *tabbar = [[KTTabBar alloc] init];
+    tabbar.delegate = self;
     [self.view addSubview:tabbar];
     self.ktTabBar = tabbar;
-    tabbar.delegate = self;
     
     // Do any additional setup after loading the view.
 }
@@ -33,23 +33,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidLayoutSubviews{
-    self.view.frame = [self getFrame];
-    WS(ws);
-    
-    [self.ktTabBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(ws.view.frame.size.width, 50));
-    }];
-}
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (void)ktTabBar:(KTTabBar *)tabBar didSelectIndex:(NSInteger)index flag:(int)flag{
     self.selectedIndex = index;
 }

@@ -15,11 +15,13 @@
     if (self = [super init]) {
         CGFloat padding = 20.0;
         CGSize  blankSize = [UIScreen mainScreen].bounds.size;
-        self.window = [[UIWindow alloc] initWithFrame:CGRectMake(padding,padding * 2,blankSize.width - 2 * padding, blankSize.height - 4* padding)];
+        CGRect  windowFrame =CGRectMake(padding,padding * 2,blankSize.width - 2 * padding, blankSize.height - 4* padding);
+        self.window = [[UIWindow alloc] initWithFrame:windowFrame];
         self.window.backgroundColor = [UIColor whiteColor];
         self.window.layer.borderColor = [UIColor blackColor].CGColor;
         self.window.layer.borderWidth = 1;
-//        self.window.layer.masksToBounds = YES;
+        self.window.layer.cornerRadius = 4;
+        self.window.layer.masksToBounds = YES;
         [self.window setWindowLevel:UIWindowLevelAlert];
     }
     return self;

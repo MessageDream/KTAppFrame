@@ -28,7 +28,7 @@ typedef enum {
 @property(nonatomic,strong) UIImage * tipImage;
 
 @property(nonatomic, strong) UIColor * spaceLineColor; //分个区颜色
-//@property(nonatomic) CGFloat  spaceLineWidth; //分个区颜色
+@property(nonatomic) CGFloat  barWidth; //Bar高度或者宽度
 
 
 

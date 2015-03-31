@@ -43,7 +43,6 @@
     user.text = @"用户";
     user.textColor = [UIColor blackColor];
     user.textFont = [UIFont systemFontOfSize:16];
-    self.ktTabBar.isLandscape = YES;
     self.ktTabBar.items = @[index,discussion,chat,user];
     
     KTNavigationController *indexNavController = [[KTNavigationController alloc] initWithRootViewController:[[UIViewController alloc]init]];
@@ -67,13 +66,64 @@
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
+    CGSize size = self.view.superview.frame.size;
+    self.ktTabBar.barWidth = 50;
     WS(ws);
-    [self.ktTabBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(ws.view);
-        make.centerX.mas_equalTo(ws.view.mas_centerX);
-    }];
-    
-   
+//    if (self.view.frame.size.height > self.view.frame.size.width) {
+//        self.ktTabBar.isLandscape = YES;
+//        [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.mas_equalTo(ws.view.superview);
+//            make.centerX.mas_equalTo(ws.view.superview.mas_centerX);
+//            make.size.mas_equalTo(CGSizeMake(size.width, size.height -  ws.ktTabBar.barWidth));
+//        }];
+//        
+//        [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.size.mas_equalTo(CGSizeMake(ws.view.frame.size.width,  ws.ktTabBar.barWidth));
+//            make.bottom.equalTo(ws.view).mas_offset(ws.ktTabBar.barWidth);
+//            make.centerX.mas_equalTo(ws.view.mas_centerX);
+//        }];
+//    }else{
+//        self.ktTabBar.isLandscape = NO;
+//        [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.right.mas_equalTo(ws.view.superview);
+//            make.centerY.mas_equalTo(ws.view.superview.mas_centerY);
+//            make.size.mas_equalTo(CGSizeMake(size.width - ws.ktTabBar.barWidth, size.height));
+//        }];
+//        
+//        [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(ws.view).mas_offset(-ws.ktTabBar.barWidth);
+//            make.size.mas_equalTo(CGSizeMake(ws.ktTabBar.barWidth,ws.view.frame.size.height));
+//            make.centerY.mas_equalTo(ws.view.mas_centerY);
+//        }];
+//    }
+    if (self.view.frame.size.height > self.view.frame.size.width) {
+        self.ktTabBar.isLandscape = YES;
+        [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(ws.view.superview);
+            make.centerX.mas_equalTo(ws.view.superview.mas_centerX);
+            make.size.mas_equalTo(CGSizeMake(size.width, size.height ));
+        }];
+        
+        [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(ws.view.frame.size.width,  ws.ktTabBar.barWidth));
+            make.bottom.equalTo(ws.view);
+            make.centerX.mas_equalTo(ws.view.mas_centerX);
+        }];
+    }else{
+        self.ktTabBar.isLandscape = NO;
+        [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(ws.view.superview);
+            make.centerY.mas_equalTo(ws.view.superview.mas_centerY);
+            make.size.mas_equalTo(CGSizeMake(size.width , size.height));
+        }];
+        
+        [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(ws.view);
+            make.size.mas_equalTo(CGSizeMake(ws.ktTabBar.barWidth,ws.view.frame.size.height));
+            make.centerY.mas_equalTo(ws.view.mas_centerY);
+        }];
+    }
+ 
 }
 
 -(void)viewDidAppear:(BOOL)animated{
