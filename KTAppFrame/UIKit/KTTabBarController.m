@@ -18,8 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-//    self.tabBar.hidden =YES;
     [self.tabBar removeFromSuperview];
     KTTabBar *tabbar = [[KTTabBar alloc] init];
     tabbar.delegate = self;
@@ -37,6 +35,7 @@
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     [self.view.superview addSubview:self.ktTabBar];
+    
 }
 
 - (void)ktTabBar:(KTTabBar *)tabBar didSelectIndex:(NSInteger)index flag:(int)flag{

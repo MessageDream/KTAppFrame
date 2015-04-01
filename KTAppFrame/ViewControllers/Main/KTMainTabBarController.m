@@ -68,32 +68,32 @@
     [super viewDidLayoutSubviews];
     CGSize size = self.view.superview.frame.size;
     self.ktTabBar.barWidth = 50;
-    WS(ws);
+    
     if (self.view.frame.size.height > self.view.frame.size.width) {
         self.ktTabBar.isLandscape = YES;
         [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(ws.view.superview);
-            make.centerX.mas_equalTo(ws.view.superview.mas_centerX);
-            make.size.mas_equalTo(CGSizeMake(size.width, size.height -  ws.ktTabBar.barWidth));
+            make.top.mas_equalTo(self.view.superview);
+            make.centerX.mas_equalTo(self.view.superview.mas_centerX);
+            make.size.mas_equalTo(CGSizeMake(size.width, size.height -  self.ktTabBar.barWidth));
         }];
         
         [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(ws.view.superview.frame.size.width,  ws.ktTabBar.barWidth));
-            make.bottom.equalTo(ws.view.superview);
-            make.centerX.mas_equalTo(ws.view.superview.mas_centerX);
+            make.size.mas_equalTo(CGSizeMake(self.view.superview.frame.size.width,  self.ktTabBar.barWidth));
+            make.bottom.equalTo(self.view.superview);
+            make.centerX.mas_equalTo(self.view.superview.mas_centerX);
         }];
     }else{
         self.ktTabBar.isLandscape = NO;
         [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(ws.view.superview);
-            make.centerY.mas_equalTo(ws.view.superview.mas_centerY);
-            make.size.mas_equalTo(CGSizeMake(size.width - ws.ktTabBar.barWidth, size.height));
+            make.right.mas_equalTo(self.view.superview);
+            make.centerY.mas_equalTo(self.view.superview.mas_centerY);
+            make.size.mas_equalTo(CGSizeMake(size.width - self.ktTabBar.barWidth, size.height));
         }];
         
         [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(ws.view.superview);
-            make.size.mas_equalTo(CGSizeMake(ws.ktTabBar.barWidth,ws.view.superview.frame.size.height));
-            make.centerY.mas_equalTo(ws.view.superview.mas_centerY);
+            make.left.equalTo(self.view.superview);
+            make.size.mas_equalTo(CGSizeMake(self.ktTabBar.barWidth,self.view.superview.frame.size.height));
+            make.centerY.mas_equalTo(self.view.superview.mas_centerY);
         }];
     }
 }
@@ -101,6 +101,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     self.ktTabBar.selectedIndex = 1;
 }
+
 -(void)dealloc{
 
 }

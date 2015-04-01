@@ -47,18 +47,18 @@
     CGSize size = self.view.superview.frame.size;
     self.view.backgroundColor =[UIColor greenColor];
     self.ktTabBar.barWidth = 50;
-    WS(ws);
+    ;
     self.ktTabBar.isLandscape = YES;
     [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(size.width, size.height -  ws.ktTabBar.barWidth));
-        make.bottom.mas_equalTo(ws.view.superview);
-        make.centerX.mas_equalTo(ws.view.superview.mas_centerX);
+        make.size.mas_equalTo(CGSizeMake(size.width, size.height -  self.ktTabBar.barWidth));
+        make.bottom.mas_equalTo(self.view.superview);
+        make.centerX.mas_equalTo(self.view.superview.mas_centerX);
     }];
     
     [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(ws.view.superview.frame.size.width,  ws.ktTabBar.barWidth));
-        make.top.equalTo(ws.view.superview);
-        make.centerX.mas_equalTo(ws.view.superview.mas_centerX);
+        make.size.mas_equalTo(CGSizeMake(self.view.superview.frame.size.width,  self.ktTabBar.barWidth));
+        make.top.equalTo(self.view.superview);
+        make.centerX.mas_equalTo(self.view.superview.mas_centerX);
     }];
 }
 

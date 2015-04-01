@@ -70,8 +70,8 @@ static KTAppFrame * s_appframe = nil ;
 }
 
 -(void)close:(id)sender{
-    self.window.rootViewController = nil;
-    [self.window.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//    self.window.rootViewController = nil;
+//    [self.window.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.window resignKeyWindow];
     self.window.hidden = YES;
     [self.window removeFromSuperview];
