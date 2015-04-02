@@ -15,6 +15,7 @@
 
 @interface KTDiscussionViewController ()<KTDiscussionViewDelegate,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,weak) UITableView *tableView;
+@property(nonatomic,strong)NSMutableDictionary *heightStoreDic;
 @end
 
 @implementation KTDiscussionViewController
@@ -38,8 +39,7 @@
 #pragma makr - tableView Delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [self tableView:tableView cellForRowAtIndexPath:indexPath].frame.size.height;
-//    return 200;
+    return [self autoAdjustedCellHeightAtIndexPath:indexPath inTableView:tableView];
 }
 
 
@@ -49,6 +49,61 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"cell";
+    KTDiscussionTableViewCell *cell  = [self cellForTableView:tableView rowAtIndexPath:indexPath andReuseIdentifier:CellIdentifier];
+   
+    [cell updateConstraints];
+    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+
+//    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+
+
+- (CGFloat)autoAdjustedCellHeightAtIndexPath:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView {
+    
+    CGFloat cellHeight = [self cellHeightAtIndexPath:indexPath];
+    if (cellHeight > 0) {
+        return cellHeight;
+    } else {
+        KTDiscussionTableViewCell *cell = [self cellForTableView:tableView rowAtIndexPath:indexPath andReuseIdentifier:nil];
+        
+         [cell updateConstraints];
+        
+        [cell setNeedsUpdateConstraints];
+        [cell updateConstraintsIfNeeded];
+        [cell setNeedsLayout];
+        [cell layoutIfNeeded];
+       
+        
+        CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+        
+        height += 1.0f;
+        //计算完后保存，避免多次重复计算
+        [self saveCellHeight:height forIndexPath:indexPath];
+        return height;
+    }
+}
+
+-(CGFloat)cellHeightAtIndexPath:(NSIndexPath *)indexPath{
+    if (!self.heightStoreDic) {
+        self.heightStoreDic = [NSMutableDictionary dictionaryWithCapacity:20];
+    }
+    
+    if ([[self.heightStoreDic allKeys] indexOfObject:indexPath] >= 0 ) {
+        return [[self.heightStoreDic objectForKey:indexPath] floatValue];
+    }
+    return 0;
+}
+
+-(KTDiscussionTableViewCell*) cellForTableView:(UITableView *)tableView rowAtIndexPath:(NSIndexPath *)indexPath andReuseIdentifier:(NSString *)CellIdentifier {
     KTDiscussionTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[KTDiscussionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
@@ -62,13 +117,18 @@
     cell.contentLabel.text = @"可视对讲发动机啊金卡剪发剪发会计法啊了放假啊开发可浪费电脑蹙额车U盾vhcsvnauhvuana那句拿狙击啊vbj那今年初vajbcjabvcanjncjacnjanajn那就拿vajnvjavnavj";
     [cell.headBtn setBackgroundImage:nil forState:UIControlStateNormal];
     cell.headBtn.backgroundColor = [UIColor greenColor];
-//    [cell updateConstraints];
+    
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)saveCellHeight:(CGFloat)height forIndexPath:(NSIndexPath *)indexPath{
+    if (!self.heightStoreDic) {
+        self.heightStoreDic = [NSMutableDictionary dictionaryWithCapacity:20];
+    }
     
+    [self.heightStoreDic setObject:@(height) forKey:indexPath];
 }
+
 
 #pragma mark - 搜索
 

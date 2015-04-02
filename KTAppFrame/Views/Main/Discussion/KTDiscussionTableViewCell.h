@@ -24,6 +24,7 @@
 @property (nonatomic,strong) UILabel *replycountLabel;
 @property (nonatomic,strong) UIButton *headBtn;
 @property (nonatomic,strong) UILabel *contentLabel;
+
 @property (nonatomic) CGFloat cellHeight;
 -(void)setImageWithUrls:(NSArray *)picurls;
 -(void)setImageWithUrls:(NSArray *)picurls refresh:(BOOL)refresh;

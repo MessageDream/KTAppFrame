@@ -13,9 +13,7 @@
 
 @interface KTDiscussionTableViewCell()
 @property(nonatomic,strong) UIView *splitLineView;
-@property(nonatomic,weak) UIView *containerView;
-@property (nonatomic) CGFloat oneLineHeight;
-@property (nonatomic) CGFloat twoLineHeight;
+@property(nonatomic,strong) UIView *containerView;
 @end
 
 @implementation KTDiscussionTableViewCell
@@ -42,7 +40,7 @@
         toppedLabel.backgroundColor = [UIColor yellowColor];
         toppedLabel.font = [UIFont systemFontOfSize:14];
         toppedLabel.textColor = [UIColor lightGrayColor];
-        toppedLabel.textAlignment = UITextAlignmentCenter;
+        toppedLabel.textAlignment = NSTextAlignmentCenter;
         [self.containerView addSubview:toppedLabel];
         self.toppedLabel = toppedLabel;
         
@@ -51,10 +49,10 @@
         UILabel *timeLabel = [[UILabel alloc] init];
         timeLabel.backgroundColor = [UIColor clearColor];
         
-        timeLabel.lineBreakMode = UILineBreakModeTailTruncation;
+        timeLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         timeLabel.font = [UIFont systemFontOfSize:12];
         timeLabel.textColor = [UIColor lightGrayColor];
-        timeLabel.textAlignment = UITextAlignmentRight;
+        timeLabel.textAlignment = NSTextAlignmentRight;
         [self.containerView  addSubview:timeLabel];
         self.timeLabel = timeLabel;
         
@@ -63,10 +61,10 @@
         UILabel *nicknameLabel = [[UILabel alloc] init];
         nicknameLabel.backgroundColor = [UIColor clearColor];
         
-        nicknameLabel.lineBreakMode = UILineBreakModeTailTruncation;
+        nicknameLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         nicknameLabel.font = [UIFont boldSystemFontOfSize:12];
         nicknameLabel.textColor = [UIColor lightGrayColor];
-        nicknameLabel.textAlignment = UITextAlignmentLeft;
+        nicknameLabel.textAlignment = NSTextAlignmentLeft;
         [self.containerView addSubview:nicknameLabel];
         self.nicknameLabel = nicknameLabel;
         
@@ -75,10 +73,8 @@
         contentLabel.backgroundColor = [UIColor clearColor];
         contentLabel.textColor = [UIColor blackColor];
         contentLabel.font = [UIFont systemFontOfSize:15];
+        contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         contentLabel.numberOfLines = 2;
-        
-        self.oneLineHeight = contentLabel.font.lineHeight;
-//        self.twoLineHeight = size.height;
         [self.containerView  addSubview:contentLabel];
         self.contentLabel = contentLabel;
         
@@ -86,10 +82,10 @@
         //回复+称赞
         UILabel *replyCountLabel = [[UILabel alloc] init];
         replyCountLabel.backgroundColor = [UIColor clearColor];
-        replyCountLabel.lineBreakMode = UILineBreakModeClip;
+        replyCountLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         replyCountLabel.font = [UIFont systemFontOfSize:12];
         replyCountLabel.textColor = [UIColor lightGrayColor];
-        replyCountLabel.textAlignment = UITextAlignmentRight;
+        replyCountLabel.textAlignment = NSTextAlignmentRight;
      
         [self.containerView  addSubview:replyCountLabel];
         self.replycountLabel = replyCountLabel;
@@ -115,88 +111,88 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-    CGFloat paddiing = 10.0;
+
+}
+
+-(void)updateConstraints{
+    [super updateConstraints];
+    
+    CGFloat padding = 10.0;
     CGFloat headWidth = 25.0;
     CGFloat underLineHeight = 0.5;
     
-    WS(ws);
-    
-   
-    
-    
-    [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(ws.contentView).with.insets(UIEdgeInsetsMake(paddiing/2, paddiing, paddiing/2, paddiing));
-        //        make.size.mas_equalTo(CGSizeMake(self.frame.size.width - 20, 80));
-    }];
-    
     [self.splitLineView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(ws.contentView);
-        make.width.mas_equalTo(ws.contentView.mas_width);
+        make.bottom.equalTo(self.contentView);
+        make.width.mas_equalTo(self.contentView.mas_width);
         make.height.mas_equalTo(underLineHeight);
     }];
     
     [self.replycountLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(ws.containerView);
-        make.right.equalTo(ws.containerView);
-        CGSize size = [ws.replycountLabel.text sizeWithFont:ws.replycountLabel.font];
+        make.bottom.equalTo(self.containerView);
+        make.right.equalTo(self.containerView);
+        CGSize size = [self.replycountLabel.text sizeWithFont:self.replycountLabel.font];
         make.size.mas_equalTo(size);
     }];
     
     [self.contentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        CGSize size = [ws.contentLabel.text sizeWithFont:ws.contentLabel.font forWidth:ws.containerView.bounds.size.width lineBreakMode:NSLineBreakByWordWrapping];
-        make.size.mas_equalTo(size);
-        make.bottom.mas_equalTo(ws.replycountLabel.mas_top).mas_offset(-paddiing);
-        make.left.equalTo(ws.containerView);
+        //        self.contentLabel.preferredMaxLayoutWidth = self.containerView.bounds.size.width;
+//        CGSize size = [self.contentLabel.text sizeWithFont:self.contentLabel.font forWidth:self.containerView.bounds.size.width lineBreakMode:NSLineBreakByTruncatingTail];
+//        make.size.mas_equalTo(size);
+        make.top.mas_equalTo(self.headBtn.mas_bottom).mas_offset(padding);
+        make.left.equalTo(self.containerView);
+        make.right.equalTo(self.containerView);
+//        make.top.equalTo(self.headBtn.mas_bottom).insets(UIEdgeInsetsMake(10, 0, 0, 0));
+//        make.right.equalTo(self.containerView).insets(UIEdgeInsetsMake(10, 0, 0, 0));
+//        make.left.equalTo(self.containerView).insets(UIEdgeInsetsMake(10, 0, 0, 0));
+        make.height.mas_greaterThanOrEqualTo(40);
+        make.baseline.mas_equalTo(self.replycountLabel.mas_top).offset(-padding);
     }];
-   
+    
     
     [self.headBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(ws.containerView);
-        make.bottom.mas_equalTo(ws.contentLabel.mas_top).mas_offset(-paddiing);
+        make.left.equalTo(self.containerView);
+        make.top.equalTo(self.containerView);
         make.size.mas_equalTo(CGSizeMake(headWidth, headWidth));
     }];
     
     [self.nicknameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(ws.headBtn.mas_bottom);
-        make.left.mas_equalTo(ws.headBtn.mas_right).mas_offset(paddiing);
-        CGSize size = [ws.nicknameLabel.text sizeWithFont:ws.nicknameLabel.font];
+        make.bottom.mas_equalTo(self.headBtn.mas_bottom);
+        make.left.mas_equalTo(self.headBtn.mas_right).mas_offset(padding);
+        CGSize size = [self.nicknameLabel.text sizeWithFont:self.nicknameLabel.font];
         make.size.mas_equalTo(size);
     }];
     
     
     [self.timeLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(ws.headBtn.mas_bottom);
-        if (ws.toppedLabel.text) {
-            make.right.mas_equalTo(ws.toppedLabel.mas_left).mas_offset(-paddiing);
+        make.bottom.mas_equalTo(self.headBtn.mas_bottom);
+        if (self.toppedLabel.text) {
+            make.right.mas_equalTo(self.toppedLabel.mas_left).mas_offset(-padding);
         }else{
-            make.right.equalTo(ws.containerView);
+            make.right.equalTo(self.containerView);
         }
-        CGSize size = [ws.timeLabel.text sizeWithFont:ws.timeLabel.font];
+        CGSize size = [self.timeLabel.text sizeWithFont:self.timeLabel.font];
         make.size.mas_equalTo(size);
     }];
     
     
     [self.toppedLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(ws.headBtn.mas_bottom);
-        make.right.equalTo(ws.containerView);
-        CGSize size = [ws.toppedLabel.text sizeWithFont:ws.toppedLabel.font];
+        make.bottom.mas_equalTo(self.headBtn.mas_bottom);
+        make.right.equalTo(self.containerView);
+        CGSize size = [self.toppedLabel.text sizeWithFont:self.toppedLabel.font];
         make.size.mas_equalTo(size);
     }];
     
     
-//    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//        CGFloat height = paddiing + CGRectGetMaxY(ws.splitLineView.frame);
-//        make.height.mas_equalTo(height);
-//    }];
-   
-//    [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(ws);
-//    }];
+    [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(padding/2, padding, padding/2, padding));
+    }];
+    
+    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo([self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
+        make.width.mas_equalTo(self.mas_width);
+        make.center.equalTo(self);
+    }];
 }
-
--(void)updateConstraints{
-    [super updateConstraints];
-    }
 
 -(void)clickHead:(id)sender{
 
