@@ -144,7 +144,7 @@
 //        make.top.equalTo(self.headBtn.mas_bottom).insets(UIEdgeInsetsMake(10, 0, 0, 0));
 //        make.right.equalTo(self.containerView).insets(UIEdgeInsetsMake(10, 0, 0, 0));
 //        make.left.equalTo(self.containerView).insets(UIEdgeInsetsMake(10, 0, 0, 0));
-        make.height.mas_greaterThanOrEqualTo(40);
+        make.height.mas_greaterThanOrEqualTo(self.contentLabel.font.lineHeight*2);
         make.baseline.mas_equalTo(self.replycountLabel.mas_top).offset(-padding);
     }];
     
