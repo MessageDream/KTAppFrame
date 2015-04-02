@@ -14,6 +14,8 @@
 @interface KTDiscussionTableViewCell()
 @property(nonatomic,strong) UIView *splitLineView;
 @property(nonatomic,strong) UIView *containerView;
+@property(nonatomic,strong) UIImageView *imageView;
+@property(nonatomic,copy)NSString * imageUrlStr;
 @end
 
 @implementation KTDiscussionTableViewCell
@@ -108,6 +110,14 @@
 
 }
 
+-(void)setImageUrlStr:(NSString *)imageUrlStr{
+    _imageUrlStr = imageUrlStr;
+    if (!self.imageView) {
+        self.imageView = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.containerView addSubview:self.imageView];
+    }
+    [self updateConstraints];
+}
 
 -(void)layoutSubviews{
     [super layoutSubviews];
@@ -121,20 +131,20 @@
     CGFloat headWidth = 25.0;
     CGFloat underLineHeight = 0.5;
     
-    [self.splitLineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.splitLineView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.contentView);
         make.width.mas_equalTo(self.contentView.mas_width);
         make.height.mas_equalTo(underLineHeight);
     }];
     
-    [self.replycountLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.replycountLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.containerView);
         make.right.equalTo(self.containerView);
         CGSize size = [self.replycountLabel.text sizeWithFont:self.replycountLabel.font];
         make.size.mas_equalTo(size);
     }];
     
-    [self.contentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.contentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         //        self.contentLabel.preferredMaxLayoutWidth = self.containerView.bounds.size.width;
 //        CGSize size = [self.contentLabel.text sizeWithFont:self.contentLabel.font forWidth:self.containerView.bounds.size.width lineBreakMode:NSLineBreakByTruncatingTail];
 //        make.size.mas_equalTo(size);
@@ -149,13 +159,13 @@
     }];
     
     
-    [self.headBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.headBtn mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.containerView);
         make.top.equalTo(self.containerView);
         make.size.mas_equalTo(CGSizeMake(headWidth, headWidth));
     }];
     
-    [self.nicknameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.nicknameLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.headBtn.mas_bottom);
         make.left.mas_equalTo(self.headBtn.mas_right).mas_offset(padding);
         CGSize size = [self.nicknameLabel.text sizeWithFont:self.nicknameLabel.font];
@@ -163,7 +173,7 @@
     }];
     
     
-    [self.timeLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.timeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.headBtn.mas_bottom);
         if (self.toppedLabel.text) {
             make.right.mas_equalTo(self.toppedLabel.mas_left).mas_offset(-padding);
@@ -175,7 +185,7 @@
     }];
     
     
-    [self.toppedLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.toppedLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.headBtn.mas_bottom);
         make.right.equalTo(self.containerView);
         CGSize size = [self.toppedLabel.text sizeWithFont:self.toppedLabel.font];
@@ -183,11 +193,18 @@
     }];
     
     
-    [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(padding/2, padding, padding/2, padding));
+    [self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
+      
+        UIEdgeInsets insets = UIEdgeInsetsMake(padding/2, padding, padding/2, padding);
+        if (_imageUrlStr && [_imageUrlStr length] >0) {
+            make.right.mas_equalTo(self.imageView.mas_left).mas_offset(-padding).insets(insets);
+        }else{
+             make.edges.equalTo(self.contentView).with.insets(insets);
+        }
+       
     }];
     
-    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo([self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
         make.width.mas_equalTo(self.mas_width);
         make.center.equalTo(self);
