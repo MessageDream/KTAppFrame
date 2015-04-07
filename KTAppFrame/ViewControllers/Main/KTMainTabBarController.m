@@ -7,9 +7,10 @@
 //
 
 #import "KTMainTabBarController.h"
-#import "KTDiscussionTabBarController.h"
+//#import "KTDiscussionTabBarController.h"
 #import "KTTabBarItem.h"
 #import "KTNavigationController.h"
+#import "KTDiscussionViewController.h"
 
 @interface KTMainTabBarController ()
 
@@ -19,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     KTTabBarItem *index = [[KTTabBarItem alloc] init];
     index.badgeValue = @"0";
     index.text = @"主页";
@@ -46,10 +46,12 @@
     self.ktTabBar.items = @[index,discussion,chat,user];
     
     KTNavigationController *indexNavController = [[KTNavigationController alloc] initWithRootViewController:[[UIViewController alloc]init]];
-    indexNavController.navigationBarHidden = YES;
+//    indexNavController.navigationBarHidden = YES;
     
-    KTNavigationController *discussionNavController = [[KTNavigationController alloc] initWithRootViewController:[[KTDiscussionTabBarController alloc]init]];
-    discussionNavController.navigationBarHidden = YES;
+//    KTNavigationController *discussionNavController = [[KTNavigationController alloc] initWithRootViewController:[[KTDiscussionTabBarController alloc]init]];
+//    discussionNavController.navigationBarHidden = YES;
+   
+     KTNavigationController *discussionNavController = [[KTNavigationController alloc] initWithRootViewController:[[KTDiscussionViewController alloc]init]];
     
     KTNavigationController *chatNavController = [[KTNavigationController alloc] initWithRootViewController:[[UIViewController alloc]init]];
     
@@ -66,36 +68,27 @@
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    CGSize size = self.view.superview.frame.size;
-    self.ktTabBar.barWidth = 50;
+        CGSize size = self.view.superview.frame.size;
+        self.ktTabBar.barWidth = 50;
+//        [self.view.superview addSubview:self.ktTabBar];
     
-    if (self.view.frame.size.height > self.view.frame.size.width) {
-        self.ktTabBar.isLandscape = YES;
-        [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.view.superview);
-            make.centerX.mas_equalTo(self.view.superview.mas_centerX);
-            make.size.mas_equalTo(CGSizeMake(size.width, size.height -  self.ktTabBar.barWidth));
-        }];
-        
-        [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(self.view.superview.frame.size.width,  self.ktTabBar.barWidth));
-            make.bottom.equalTo(self.view.superview);
-            make.centerX.mas_equalTo(self.view.superview.mas_centerX);
-        }];
-    }else{
-        self.ktTabBar.isLandscape = NO;
-        [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.view.superview);
-            make.centerY.mas_equalTo(self.view.superview.mas_centerY);
-            make.size.mas_equalTo(CGSizeMake(size.width - self.ktTabBar.barWidth, size.height));
-        }];
-        
-        [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.view.superview);
-            make.size.mas_equalTo(CGSizeMake(self.ktTabBar.barWidth,self.view.superview.frame.size.height));
-            make.centerY.mas_equalTo(self.view.superview.mas_centerY);
-        }];
-    }
+        if (self.view.frame.size.height > self.view.frame.size.width) {
+            [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(self.view.superview);
+                make.centerX.mas_equalTo(self.view.superview.mas_centerX);
+                make.size.mas_equalTo(CGSizeMake(size.width, size.height -  self.ktTabBar.barWidth));
+            }];
+            
+          self.ktTabBar.tabBarPosition = KTTabBarPositionBottom;
+        }else{
+            [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.mas_equalTo(self.view.superview);
+                make.centerY.mas_equalTo(self.view.superview.mas_centerY);
+                make.size.mas_equalTo(CGSizeMake(size.width - self.ktTabBar.barWidth, size.height));
+            }];
+           self.ktTabBar.tabBarPosition = KTTabBarPositionLeft;
+            
+        }
 }
 
 -(void)viewDidAppear:(BOOL)animated{

@@ -14,6 +14,7 @@
 
 @interface UIViewController (KTCustom)
 //@property(nonatomic,weak)id<KTPassValueDelegate> passValueDelegate;
+
 -(void)setNavBarHidden:(BOOL)isHidden;
--(CGRect)getFrame;
+-(CGRect)getWindowBunds;
 @end

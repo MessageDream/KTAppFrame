@@ -9,6 +9,7 @@
 #import "KTDiscussionViewController.h"
 #import "KTDiscussionView.h"
 #import "KTDiscussionTableViewCell.h"
+#import "KTDIscussionDetailViewController.h"
 
 #define SEARCH_TEXTLIMIT        100
 #define TOPIC_PAGE_SIZE         30
@@ -21,14 +22,15 @@
 @implementation KTDiscussionViewController
 
 -(void)loadView{    
-    KTDiscussionView * view = [[KTDiscussionView alloc] initWithFrame:[self getFrame]];
+    KTDiscussionView * view = [[KTDiscussionView alloc] initWithFrame:[self getWindowBunds]];
     view.delegate = self;
     view.tableView.delegate = self;
     view.tableView.dataSource = self;
     view.tableSearchBar.delegate = self;
     self.view = view;
     self.tableView = view.tableView;
-    
+//    [self setKtTabBarLayoutGuide:YES];
+//    [self setKtTopLayoutGuide:YES];
 }
 
 #pragma mark - KTDiscussionViewDelegate
@@ -62,7 +64,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    KTDIscussionDetailViewController * controller = [[KTDIscussionDetailViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 
@@ -115,7 +118,8 @@
     cell.timeLabel.text  = @"03-23 14:57";
     cell.replycountLabel.text  = @"回复(17)|称赞(128)";
     cell.contentLabel.text = @"可视对讲发动机啊金卡剪发剪发会计法啊了放假啊开发可浪费电脑蹙额车U盾vhcsvnauhvuana那句拿狙击啊vbj那今年初vajbcjabvcanjncjacnjanajn那就拿vajnvjavnavj";
-    [cell.headBtn setBackgroundImage:nil forState:UIControlStateNormal];
+    [cell.headBtn setBackgroundImage:[UIImage imageNamed:@"defaulthead"] forState:UIControlStateNormal];
+    [cell setImageUrlStr:@"tab_blank_selected_5.png"];
     cell.headBtn.backgroundColor = [UIColor greenColor];
     
     return cell;
@@ -207,6 +211,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.navigationController.navigationBarHidden = YES;
+}
+
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
 }
 
 /*

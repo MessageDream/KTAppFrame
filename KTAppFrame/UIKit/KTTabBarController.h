@@ -13,4 +13,5 @@
 
 @interface KTTabBarController : UITabBarController<KTTabBarDelegate>
 @property(nonatomic,weak)KTTabBar *ktTabBar;
+@property(nonatomic,assign) BOOL isShown;
 @end

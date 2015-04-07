@@ -11,7 +11,7 @@
 #import "KTTabBarItem.h"
 #import "KTNavigationController.h"
 
-@interface KTDiscussionTabBarController ()
+@interface KTDiscussionTabBarController ()<UINavigationControllerDelegate>
 
 @end
 
@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavBarHidden:YES];
+    
     self.ktTabBar.spaceLineColor = [UIColor grayColor];
     self.ktTabBar.style = KTTabBarStyleText;
     KTTabBarItem * topics = [[KTTabBarItem alloc] init];
@@ -42,25 +42,21 @@
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    self.ktTabBar.isLandscape = YES;
+     [self setNavBarHidden:YES];
     
     CGSize size = self.view.superview.frame.size;
     self.view.backgroundColor =[UIColor greenColor];
     self.ktTabBar.barWidth = 50;
-    ;
-    self.ktTabBar.isLandscape = YES;
+    
     [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(size.width, size.height -  self.ktTabBar.barWidth));
+        make.size.mas_equalTo(CGSizeMake(size.width, size.height ));
         make.bottom.mas_equalTo(self.view.superview);
         make.centerX.mas_equalTo(self.view.superview.mas_centerX);
     }];
-    
-    [self.ktTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(self.view.superview.frame.size.width,  self.ktTabBar.barWidth));
-        make.top.equalTo(self.view.superview);
-        make.centerX.mas_equalTo(self.view.superview.mas_centerX);
-    }];
+    self.ktTabBar.tabBarPosition = KTTabBarPositionTop;
 }
+
+
 
 -(void)viewDidAppear:(BOOL)animated{
     self.ktTabBar.selectedIndex = 0;
@@ -69,5 +65,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

@@ -16,6 +16,12 @@ typedef enum {
     KTTabBarStyleText
 }KTTabBarStyle;
 
+typedef enum {
+    KTTabBarPositionBottom,
+    KTTabBarPositionTop,
+    KTTabBarPositionLeft,
+}KTTabBarPosition;
+
 @interface KTTabBar : UIView
 
 @property(nonatomic,weak) id<KTTabBarDelegate> delegate;
@@ -37,8 +43,8 @@ typedef enum {
 //@property(nonatomic) CGFloat headSpacing;   //头上留出的间距。横版左边为头，竖版上面为头。默认0
 //@property(nonatomic) CGFloat itemSpacing;   // 默认 0
 //@property(nonatomic, strong) UIColor * spaceColor; //分个区颜色
-@property(nonatomic) BOOL isLandscape; //0: 横版(默认)  1: 竖版
 
+@property(nonatomic) KTTabBarPosition tabBarPosition;
 @property(nonatomic) KTTabBarStyle style;
 
 // UI布局

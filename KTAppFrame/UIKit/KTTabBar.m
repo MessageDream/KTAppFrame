@@ -8,6 +8,7 @@
 
 #import "KTTabBar.h"
 #import "KTTabBarItem.h"
+#import "Masonry.h"
 
 
 #define VIEW_TAG_KTTABBAR_ITEM                          0x0100100
@@ -18,8 +19,7 @@
 
 
 @interface KTTabBar ()
-
-
+@property(nonatomic) BOOL isLandscape; //0: 横版(默认)  1: 竖版
 @end
 
 @implementation KTTabBar
@@ -96,7 +96,32 @@
     }
     
 }
-
+-(void)setTabBarPosition:(KTTabBarPosition)tabBarPosition{
+    _tabBarPosition = tabBarPosition;
+    if (_tabBarPosition == KTTabBarPositionLeft) {
+        self.isLandscape = NO;
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.superview);
+            make.size.mas_equalTo(CGSizeMake(self.barWidth,self.superview.bounds.size.height));
+            make.centerY.mas_equalTo(self.superview.mas_centerY);
+        }];
+    }else{
+        self.isLandscape = YES;
+        if (_tabBarPosition == KTTabBarPositionBottom) {
+            [self mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(self.superview.bounds.size.width,  self.barWidth));
+                make.bottom.equalTo(self.superview);
+                make.centerX.mas_equalTo(self.superview.mas_centerX);
+            }];
+        }else{
+            [self mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(self.superview.bounds.size.width,  self.barWidth));
+                make.top.equalTo(self.superview);
+                make.centerX.mas_equalTo(self.superview.mas_centerX);
+            }];
+        }
+    }
+}
 
 //-(void)setItemWidth:(CGFloat)itemWidth{
 //    _itemWidth = itemWidth;

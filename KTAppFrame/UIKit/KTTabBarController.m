@@ -20,6 +20,7 @@
     [super viewDidLoad];
     [self.tabBar removeFromSuperview];
     KTTabBar *tabbar = [[KTTabBar alloc] init];
+    tabbar.backgroundColor = [UIColor whiteColor];
     tabbar.delegate = self;
     [self.view addSubview:tabbar];
     self.ktTabBar = tabbar;
@@ -35,7 +36,6 @@
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     [self.view.superview addSubview:self.ktTabBar];
-    
 }
 
 - (void)ktTabBar:(KTTabBar *)tabBar didSelectIndex:(NSInteger)index flag:(int)flag{

@@ -81,6 +81,9 @@
 		B232A38A1ACBA68F009EF8C5 /* KTDiscussionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B232A3501ACBA68F009EF8C5 /* KTDiscussionTableViewCell.m */; };
 		B232A38B1ACBA68F009EF8C5 /* KTDiscussionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B232A3521ACBA68F009EF8C5 /* KTDiscussionView.m */; };
 		B232A39C1ACBD033009EF8C5 /* KTImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B232A39B1ACBD033009EF8C5 /* KTImageUtils.m */; };
+		B257EFF51AD397CC00E9C30B /* KTDIscussionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B257EFF41AD397CC00E9C30B /* KTDIscussionDetailViewController.m */; };
+		B257EFF81AD397EE00E9C30B /* KTDIscussionDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = B257EFF71AD397EE00E9C30B /* KTDIscussionDetailView.m */; };
+		B257EFFB1AD3C98D00E9C30B /* KTTopLayoutGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B257EFFA1AD3C98D00E9C30B /* KTTopLayoutGuideViewController.m */; };
 		B2F4A0DE1AC901D70022ACA5 /* KTAppFrame.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4A0DD1AC901D70022ACA5 /* KTAppFrame.h */; };
 		B2F4A0E01AC901D70022ACA5 /* KTAppFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A0DF1AC901D70022ACA5 /* KTAppFrame.m */; };
 		B2F4A0E61AC901D70022ACA5 /* libKTAppFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F4A0DA1AC901D70022ACA5 /* libKTAppFrame.a */; };
@@ -285,6 +288,12 @@
 		B232A3521ACBA68F009EF8C5 /* KTDiscussionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDiscussionView.m; sourceTree = "<group>"; };
 		B232A39A1ACBD033009EF8C5 /* KTImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTImageUtils.h; sourceTree = "<group>"; };
 		B232A39B1ACBD033009EF8C5 /* KTImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTImageUtils.m; sourceTree = "<group>"; };
+		B257EFF31AD397CC00E9C30B /* KTDIscussionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDIscussionDetailViewController.h; sourceTree = "<group>"; };
+		B257EFF41AD397CC00E9C30B /* KTDIscussionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDIscussionDetailViewController.m; sourceTree = "<group>"; };
+		B257EFF61AD397EE00E9C30B /* KTDIscussionDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDIscussionDetailView.h; sourceTree = "<group>"; };
+		B257EFF71AD397EE00E9C30B /* KTDIscussionDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDIscussionDetailView.m; sourceTree = "<group>"; };
+		B257EFF91AD3C98D00E9C30B /* KTTopLayoutGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTTopLayoutGuideViewController.h; sourceTree = "<group>"; };
+		B257EFFA1AD3C98D00E9C30B /* KTTopLayoutGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTTopLayoutGuideViewController.m; sourceTree = "<group>"; };
 		B2F4A0DA1AC901D70022ACA5 /* libKTAppFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKTAppFrame.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F4A0DD1AC901D70022ACA5 /* KTAppFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTAppFrame.h; sourceTree = "<group>"; };
 		B2F4A0DF1AC901D70022ACA5 /* KTAppFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTAppFrame.m; sourceTree = "<group>"; };
@@ -669,6 +678,8 @@
 			children = (
 				B232A33C1ACBA68E009EF8C5 /* KTBaseViewController.h */,
 				B232A33D1ACBA68E009EF8C5 /* KTBaseViewController.m */,
+				B257EFF91AD3C98D00E9C30B /* KTTopLayoutGuideViewController.h */,
+				B257EFFA1AD3C98D00E9C30B /* KTTopLayoutGuideViewController.m */,
 				B232A33E1ACBA68E009EF8C5 /* KTNavigationController.h */,
 				B232A33F1ACBA68E009EF8C5 /* KTNavigationController.m */,
 				B232A3401ACBA68E009EF8C5 /* KTUIViewController+KTCustom.h */,
@@ -695,6 +706,8 @@
 				B232A3451ACBA68E009EF8C5 /* KTDiscussionTabBarController.m */,
 				B232A3461ACBA68E009EF8C5 /* KTDiscussionViewController.h */,
 				B232A3471ACBA68E009EF8C5 /* KTDiscussionViewController.m */,
+				B257EFF31AD397CC00E9C30B /* KTDIscussionDetailViewController.h */,
+				B257EFF41AD397CC00E9C30B /* KTDIscussionDetailViewController.m */,
 			);
 			path = Discussion;
 			sourceTree = "<group>";
@@ -724,6 +737,8 @@
 				B232A3501ACBA68F009EF8C5 /* KTDiscussionTableViewCell.m */,
 				B232A3511ACBA68F009EF8C5 /* KTDiscussionView.h */,
 				B232A3521ACBA68F009EF8C5 /* KTDiscussionView.m */,
+				B257EFF61AD397EE00E9C30B /* KTDIscussionDetailView.h */,
+				B257EFF71AD397EE00E9C30B /* KTDIscussionDetailView.m */,
 			);
 			path = Discussion;
 			sourceTree = "<group>";
@@ -890,11 +905,13 @@
 				B232A35B1ACBA68F009EF8C5 /* KTModelSuccess.m in Sources */,
 				B232A3801ACBA68F009EF8C5 /* KTFriendApi.m in Sources */,
 				B232A2B21ACB96F9009EF8C5 /* MASCompositeConstraint.m in Sources */,
+				B257EFFB1AD3C98D00E9C30B /* KTTopLayoutGuideViewController.m in Sources */,
 				B232A3661ACBA68F009EF8C5 /* KTModelLeaderboard.m in Sources */,
 				B232A3701ACBA68F009EF8C5 /* KTModelHelperFoundation.m in Sources */,
 				B232A3531ACBA68F009EF8C5 /* KTModelAccount.m in Sources */,
 				B232A3551ACBA68F009EF8C5 /* KTModelUser.m in Sources */,
 				B232A35D1ACBA68F009EF8C5 /* KTModelHomePage.m in Sources */,
+				B257EFF51AD397CC00E9C30B /* KTDIscussionDetailViewController.m in Sources */,
 				B232A3841ACBA68F009EF8C5 /* KTNavigationController.m in Sources */,
 				B232A3791ACBA68F009EF8C5 /* KTLengthValidator.m in Sources */,
 				B232A3651ACBA68F009EF8C5 /* KTModelReward.m in Sources */,
@@ -913,6 +930,7 @@
 				B232A36F1ACBA68F009EF8C5 /* KTModelHelpArgument.m in Sources */,
 				B232A3771ACBA68F009EF8C5 /* KTAlphaValidator.m in Sources */,
 				B232A3581ACBA68F009EF8C5 /* KTModelGame.m in Sources */,
+				B257EFF81AD397EE00E9C30B /* KTDIscussionDetailView.m in Sources */,
 				B232A38A1ACBA68F009EF8C5 /* KTDiscussionTableViewCell.m in Sources */,
 				B232A3831ACBA68F009EF8C5 /* KTBaseViewController.m in Sources */,
 				B232A3871ACBA68F009EF8C5 /* KTDiscussionViewController.m in Sources */,

@@ -16,8 +16,9 @@
     }
 }
 
--(CGRect)getFrame{
+-(CGRect)getWindowBunds{
     return [UIApplication sharedApplication].keyWindow.bounds;
 }
+
 
 @end

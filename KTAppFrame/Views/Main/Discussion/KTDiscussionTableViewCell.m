@@ -14,7 +14,7 @@
 @interface KTDiscussionTableViewCell()
 @property(nonatomic,strong) UIView *splitLineView;
 @property(nonatomic,strong) UIView *containerView;
-@property(nonatomic,strong) UIImageView *imageView;
+@property(nonatomic,strong) UIImageView *customImageView;
 @property(nonatomic,copy)NSString * imageUrlStr;
 @end
 
@@ -112,9 +112,12 @@
 
 -(void)setImageUrlStr:(NSString *)imageUrlStr{
     _imageUrlStr = imageUrlStr;
-    if (!self.imageView) {
-        self.imageView = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.containerView addSubview:self.imageView];
+    if (!self.customImageView && imageUrlStr) {
+        self.customImageView = [[UIImageView alloc] init];
+        self.customImageView.layer.cornerRadius = 4.0;
+        self.customImageView.clipsToBounds = YES;
+        self.customImageView.image = [UIImage imageNamed:imageUrlStr];
+        [self.contentView addSubview:self.customImageView];
     }
     [self updateConstraints];
 }
@@ -127,9 +130,10 @@
 -(void)updateConstraints{
     [super updateConstraints];
     
-    CGFloat padding = 10.0;
-    CGFloat headWidth = 25.0;
-    CGFloat underLineHeight = 0.5;
+    CGFloat padding = 10.0f;
+    CGFloat headWidth = 25.0f;
+    CGFloat underLineHeight = 0.5f;
+    CGFloat imageWidth = 80.0f;
     
     [self.splitLineView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.contentView);
@@ -145,15 +149,9 @@
     }];
     
     [self.contentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-        //        self.contentLabel.preferredMaxLayoutWidth = self.containerView.bounds.size.width;
-//        CGSize size = [self.contentLabel.text sizeWithFont:self.contentLabel.font forWidth:self.containerView.bounds.size.width lineBreakMode:NSLineBreakByTruncatingTail];
-//        make.size.mas_equalTo(size);
         make.top.mas_equalTo(self.headBtn.mas_bottom).mas_offset(padding);
         make.left.equalTo(self.containerView);
         make.right.equalTo(self.containerView);
-//        make.top.equalTo(self.headBtn.mas_bottom).insets(UIEdgeInsetsMake(10, 0, 0, 0));
-//        make.right.equalTo(self.containerView).insets(UIEdgeInsetsMake(10, 0, 0, 0));
-//        make.left.equalTo(self.containerView).insets(UIEdgeInsetsMake(10, 0, 0, 0));
         make.height.mas_greaterThanOrEqualTo(self.contentLabel.font.lineHeight*2);
         make.baseline.mas_equalTo(self.replycountLabel.mas_top).offset(-padding);
     }];
@@ -168,8 +166,7 @@
     [self.nicknameLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.headBtn.mas_bottom);
         make.left.mas_equalTo(self.headBtn.mas_right).mas_offset(padding);
-        CGSize size = [self.nicknameLabel.text sizeWithFont:self.nicknameLabel.font];
-        make.size.mas_equalTo(size);
+        make.right.mas_equalTo(self.timeLabel.mas_left).mas_offset(-padding);
     }];
     
     
@@ -192,17 +189,33 @@
         make.size.mas_equalTo(size);
     }];
     
+     UIEdgeInsets insets = UIEdgeInsetsMake(padding/2, padding, padding/2, padding);
     
-    [self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
-      
-        UIEdgeInsets insets = UIEdgeInsetsMake(padding/2, padding, padding/2, padding);
-        if (_imageUrlStr && [_imageUrlStr length] >0) {
-            make.right.mas_equalTo(self.imageView.mas_left).mas_offset(-padding).insets(insets);
-        }else{
-             make.edges.equalTo(self.contentView).with.insets(insets);
-        }
-       
-    }];
+    
+    if (_imageUrlStr && [_imageUrlStr length] >0) {
+        
+        [self.customImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView).offset(-insets.right);
+            make.height.mas_equalTo(imageWidth);
+            make.width.mas_equalTo(self.customImageView.mas_height);
+            make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        }];
+        
+        
+        [self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.customImageView.mas_left).mas_offset(-padding);
+            make.top.mas_equalTo(self.contentView).offset(insets.top);
+            make.left.mas_equalTo(self.contentView).offset(insets.left);
+            make.bottom.mas_equalTo(self.contentView).offset(-insets.bottom);
+        }];
+ 
+        
+    }else{
+        [self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView).with.insets(insets);
+        }];
+    }
+
     
     [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo([self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);

@@ -28,4 +28,5 @@
 @property (nonatomic) CGFloat cellHeight;
 -(void)setImageWithUrls:(NSArray *)picurls;
 -(void)setImageWithUrls:(NSArray *)picurls refresh:(BOOL)refresh;
+-(void)setImageUrlStr:(NSString *)imageUrlStr;
 @end
