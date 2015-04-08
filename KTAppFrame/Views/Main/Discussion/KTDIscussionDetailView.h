@@ -6,8 +6,9 @@
 //  Copyright (c) 2015年 jayden. All rights reserved.
 //
 
-#import "KTBaseView.h"
+#import "KTTitleBarAndTableView.h"
+#import "KTDiscussionDetailContentView.h"
 
-@interface KTDIscussionDetailView : KTBaseView
-
+@interface KTDIscussionDetailView :KTTitleBarAndTableView
+@property(nonatomic,strong)KTDiscussionDetailContentView *contentView;
 @end

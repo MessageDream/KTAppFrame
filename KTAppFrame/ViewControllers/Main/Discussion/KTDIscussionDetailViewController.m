@@ -10,7 +10,7 @@
 #import "KTDIscussionDetailView.h"
 
 @interface KTDIscussionDetailViewController ()
-
+@property(nonatomic,weak)KTDIscussionDetailView *mainView;
 @end
 
 @implementation KTDIscussionDetailViewController
@@ -19,17 +19,9 @@
 -(void)loadView{
     self.navigationItem.title = @"话题详情";
     
-    UIImage *btnImage = [UIImage imageNamed:@"button_share"];
-     UIButton *share = [UIButton buttonWithType:UIButtonTypeCustom];
-    [share addTarget:self action:@selector(snsShare:) forControlEvents:UIControlEventTouchUpInside];
-    [share setBackgroundImage:btnImage forState:UIControlStateNormal];
-    share.bounds = CGRectMake(0, 0, btnImage.size.width, btnImage.size.height);
-    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc] initWithCustomView:share];
-    self.navigationItem.rightBarButtonItem = rightItem;
-    
-    KTDIscussionDetailView *view = [[KTDIscussionDetailView alloc] init];
-    view.backgroundColor = [UIColor yellowColor];
-    self.view = view;
+    KTDIscussionDetailView *view = [[KTDIscussionDetailView alloc] initWithTableViewStyle:UITableViewStylePlain];
+//    view.backgroundColor = [UIColor yellowColor];
+    self.view = self.mainView = view;
     
 }
 
@@ -38,10 +30,16 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.ktTabBarHidden = YES;
-   
+    self.mainView.contentView.nicknameLabel.text  = @"jayden12343545454466466";
+     self.mainView.contentView.timeLabel.text  = @"03-23 14:57";
+     self.mainView.contentView.contentLabel.text = @"可视对讲发动机啊金卡剪发剪发会计法啊了放假啊开发可浪费电脑蹙额车U盾vhcsvnauhvuana那句拿狙击啊vbj那今年初vajbcjabvcanjncjacnjanajn那就拿vajnvjavnavj";
+    [ self.mainView.contentView.headBtn setBackgroundImage:[UIImage imageNamed:@"defaulthead"] forState:UIControlStateNormal];
+    self.mainView.contentView.isWriteBySelf = NO;
+    self.mainView.contentView.likeCount = 10;
     // Do any additional setup after loading the view.
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

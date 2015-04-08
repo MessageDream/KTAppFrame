@@ -41,7 +41,11 @@
 #pragma makr - tableView Delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [self autoAdjustedCellHeightAtIndexPath:indexPath inTableView:tableView];
+//    NSLog(@"cell height1=%i",indexPath.row);
+    CGFloat height = [self autoAdjustedCellHeightAtIndexPath:indexPath inTableView:tableView];
+//    NSLog(@"cell height2=%i",indexPath.row);
+ 
+    return height;
 }
 
 
@@ -53,13 +57,14 @@
     static NSString *CellIdentifier = @"cell";
     KTDiscussionTableViewCell *cell  = [self cellForTableView:tableView rowAtIndexPath:indexPath andReuseIdentifier:CellIdentifier];
    
-    [cell updateConstraints];
+//    [cell updateConstraints];
     
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
+//    [cell setNeedsUpdateConstraints];
+//    [cell updateConstraintsIfNeeded];
 
 //    [cell setNeedsLayout];
-    [cell layoutIfNeeded];
+//    [cell layoutIfNeeded];
+    [cell updateConstraintsCus];
     return cell;
 }
 
@@ -78,14 +83,14 @@
     } else {
         KTDiscussionTableViewCell *cell = [self cellForTableView:tableView rowAtIndexPath:indexPath andReuseIdentifier:nil];
         
-         [cell updateConstraints];
+//         [cell updateConstraints];
         
-        [cell setNeedsUpdateConstraints];
-        [cell updateConstraintsIfNeeded];
-        [cell setNeedsLayout];
-        [cell layoutIfNeeded];
+//        [cell setNeedsUpdateConstraints];
+//        [cell updateConstraintsIfNeeded];
+//        [cell setNeedsLayout];
+//        [cell layoutIfNeeded];
        
-        
+        [cell updateConstraintsCus];
         CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
         
         height += 1.0f;
@@ -100,18 +105,22 @@
         self.heightStoreDic = [NSMutableDictionary dictionaryWithCapacity:20];
     }
     
-    if ([[self.heightStoreDic allKeys] indexOfObject:indexPath] >= 0 ) {
+    if ([self.heightStoreDic objectForKey:indexPath]) {
         return [[self.heightStoreDic objectForKey:indexPath] floatValue];
     }
     return 0;
 }
 
 -(KTDiscussionTableViewCell*) cellForTableView:(UITableView *)tableView rowAtIndexPath:(NSIndexPath *)indexPath andReuseIdentifier:(NSString *)CellIdentifier {
-    KTDiscussionTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    KTDiscussionTableViewCell *cell = nil;
+    if(CellIdentifier){
+       cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    }
     if (!cell) {
         cell = [[KTDiscussionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+//    NSLog(@"make cell 1=%i",indexPath.row);
     
     cell.toppedLabel.text = @"置顶";
     cell.nicknameLabel.text  = @"jayden12343545454466466";
@@ -120,8 +129,8 @@
     cell.contentLabel.text = @"可视对讲发动机啊金卡剪发剪发会计法啊了放假啊开发可浪费电脑蹙额车U盾vhcsvnauhvuana那句拿狙击啊vbj那今年初vajbcjabvcanjncjacnjanajn那就拿vajnvjavnavj";
     [cell.headBtn setBackgroundImage:[UIImage imageNamed:@"defaulthead"] forState:UIControlStateNormal];
     [cell setImageUrlStr:@"tab_blank_selected_5.png"];
-    cell.headBtn.backgroundColor = [UIColor greenColor];
-    
+//    NSLog(@"make cell 2=%i",indexPath.row);
+
     return cell;
 }
 

@@ -129,7 +129,11 @@
 
 -(void)updateConstraints{
     [super updateConstraints];
-    
+    }
+-(void)updateConstraintsCus{
+    if (self.bounds.size.width == 0) {
+        return;
+    }
     CGFloat padding = 10.0f;
     CGFloat headWidth = 25.0f;
     CGFloat underLineHeight = 0.5f;
@@ -189,7 +193,7 @@
         make.size.mas_equalTo(size);
     }];
     
-     UIEdgeInsets insets = UIEdgeInsetsMake(padding/2, padding, padding/2, padding);
+    UIEdgeInsets insets = UIEdgeInsetsMake(padding/2, padding, padding/2, padding);
     
     
     if (_imageUrlStr && [_imageUrlStr length] >0) {
@@ -208,22 +212,22 @@
             make.left.mas_equalTo(self.contentView).offset(insets.left);
             make.bottom.mas_equalTo(self.contentView).offset(-insets.bottom);
         }];
- 
+        
         
     }else{
         [self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView).with.insets(insets);
         }];
     }
-
+    
     
     [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo([self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
         make.width.mas_equalTo(self.mas_width);
         make.center.equalTo(self);
     }];
-}
 
+}
 -(void)clickHead:(id)sender{
 
 }

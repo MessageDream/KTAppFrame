@@ -46,10 +46,6 @@
     self.ktTabBar.items = @[index,discussion,chat,user];
     
     KTNavigationController *indexNavController = [[KTNavigationController alloc] initWithRootViewController:[[UIViewController alloc]init]];
-//    indexNavController.navigationBarHidden = YES;
-    
-//    KTNavigationController *discussionNavController = [[KTNavigationController alloc] initWithRootViewController:[[KTDiscussionTabBarController alloc]init]];
-//    discussionNavController.navigationBarHidden = YES;
    
      KTNavigationController *discussionNavController = [[KTNavigationController alloc] initWithRootViewController:[[KTDiscussionViewController alloc]init]];
     

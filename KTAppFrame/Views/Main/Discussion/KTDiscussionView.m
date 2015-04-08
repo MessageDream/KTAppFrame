@@ -55,8 +55,6 @@
         [bottomView addSubview:bottomBtn];
         
         
-        ;
-        
         [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self);
             make.size.equalTo(self);

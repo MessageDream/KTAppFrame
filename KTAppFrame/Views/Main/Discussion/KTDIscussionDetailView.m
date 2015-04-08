@@ -8,32 +8,50 @@
 
 #import "KTDIscussionDetailView.h"
 
+
 @implementation KTDIscussionDetailView
 
--(instancetype)init{
-    if (self = [super init]) {
-        UIView *contentView = [[UIView alloc] init];
-        contentView.backgroundColor = UIColor.greenColor;
-        contentView.layer.borderColor = UIColor.blackColor.CGColor;
-        contentView.layer.borderWidth = 2;
-        [self addSubview:contentView];
+-(instancetype)initWithTableViewStyle:(UITableViewStyle)style{
+    if (self = [super initWithTableViewStyle:style]) {
+        _customTitleBar.leftButtonImage = [UIImage imageNamed:@"nav_back"];
+        _customTitleBar.rightButtonImage = [UIImage imageNamed:@"button_share"];
         
-        UIView *superview = self;
-        int padding = 10;
+        KTDiscussionDetailContentView *contenview = [[KTDiscussionDetailContentView alloc] initWithStyle:KTDiscussionDetailContentViewStyleNormal];
+        self.contentView = contenview;
+        self.tableView.tableHeaderView = contenview;
         
-        [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.greaterThanOrEqualTo(superview.mas_top).offset(padding);
-            make.left.equalTo(superview.mas_left).offset(padding);
-            make.size.mas_equalTo(CGSizeMake(100, 100));
+        [contenview mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(self.tableView.mas_width);
+            make.top.equalTo(self.tableView);
+            make.centerX.mas_equalTo(self.tableView.mas_centerX);
         }];
+        
     }
     return self;
 }
 
--(void)layoutSubviews{
-    [super layoutSubviews];
+-(void)updateConstraints{
+    [super updateConstraints];
+    [self sizeHeaderToFit];
 }
 
+- (void) sizeHeaderToFit {
+    UIView *headerView = self.contentView;
+    
+    [headerView setNeedsLayout];
+    [headerView layoutIfNeeded];
+    [headerView setNeedsUpdateConstraints];
+    [headerView updateConstraints];
+    CGFloat height = [headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    
+    headerView.frame = ({
+        CGRect headerFrame = headerView.frame;
+        headerFrame.size.height = height;
+        headerFrame.origin = CGPointMake(0, 0);
+        headerFrame;
+    });
+    self.tableView.tableHeaderView = headerView;
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -17,7 +17,6 @@
 
 @interface KTDiscussionTableViewCell : UITableViewCell
 @property(nonatomic,weak) id<KTDiscussionTableViewCellDelegate> delegate;
-@property(nonatomic) NSInteger row;
 @property (nonatomic,strong) UILabel *nicknameLabel;
 @property (nonatomic,strong) UILabel *timeLabel;
 @property (nonatomic,strong) UILabel *toppedLabel;
@@ -29,4 +28,5 @@
 -(void)setImageWithUrls:(NSArray *)picurls;
 -(void)setImageWithUrls:(NSArray *)picurls refresh:(BOOL)refresh;
 -(void)setImageUrlStr:(NSString *)imageUrlStr;
+-(void)updateConstraintsCus;
 @end
