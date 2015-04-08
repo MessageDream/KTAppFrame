@@ -129,7 +129,7 @@
 
 -(void)updateConstraints{
     [super updateConstraints];
-    }
+}
 -(void)updateConstraintsCus{
     if (self.bounds.size.width == 0) {
         return;

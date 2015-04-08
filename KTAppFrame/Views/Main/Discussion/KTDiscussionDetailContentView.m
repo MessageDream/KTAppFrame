@@ -15,6 +15,8 @@
 @property (nonatomic,strong) UIButton *likeBtn;
 @property (nonatomic,strong) UIImageView *lineview;
 @property (nonatomic,strong) UIImageView *headImgview;
+@property(nonatomic,strong) UIView *picContentView;
+@property(nonatomic,strong) NSMutableArray *picsArray;
 @property(nonatomic,assign) KTDiscussionDetailContentViewStyle style;
 @end
 
@@ -30,7 +32,6 @@
         UIFont *textfont = [UIFont systemFontOfSize:12];
         
         UIView * contentView = [[UIView alloc] init];
-        contentView.backgroundColor = [UIColor whiteColor];
         [self addSubview:contentView];
         self.containerView = contentView;
         
@@ -69,60 +70,6 @@
         [contentView addSubview:nicknameLabel];
         self.nicknameLabel = nicknameLabel;
         
-        
-        
-        
-        
-       
-        
-        
-        //        NSArray *picurls = _currentDiscussion.images;
-        //        if ([picurls count]) {
-        //            UIView *thmubsView = [[UIView alloc] initWithFrame:CGRectZero];
-        //            thmubsView.tag = 109;
-        //            int count = 1;//picurls.count;
-        //            int space = 0;//[KTResManager dimensionWithKey:DIMEN_DISCUSSION_HORIZONTAL_SPACING] / 2;
-        //            int spaceImg = 0;//space / 2;
-        //            int imgWidth = [KTResManager dimensionWithKey:DIMEN_MAINCONTAINER_WIDTH] - 2*[KTResManager dimensionWithKey:DIMEN_REPLY_VERTICAL_SPACING];
-        //            int imgHeight = imgWidth;
-        //            //KTImagePool * imgPool = [KTImagePool shareImagePool];
-        //            for (int i=0;i < count;i++) {
-        //                UIImageView * btn = [[UIImageView alloc] init];//[UIButton buttonWithType:UIButtonTypeCustom];
-        //                btn.userInteractionEnabled = YES;
-        //                btn.frame = CGRectMake(space + ((imgWidth + spaceImg) * i), 0, imgWidth, imgHeight);
-        //                btn.layer.cornerRadius = [KTUtils cornerRadius_4_2];
-        //                btn.clipsToBounds = YES;
-        //
-        //                btn.tag = i;//******************
-        //                KTModelImage *imageMode = [picurls objectAtIndex:i];
-        //                NSString *urlstring = [KTImageUtils makeThumbnailsUrl:imageMode.url type:KTImageTypeDefault];//imageMode.default_thumbnailurl;//default_mid_thumbnailurl;
-        //                //[btn addTarget:self action:@selector(clickScreenshot:) forControlEvents:UIControlEventTouchUpInside];
-        //                [imgPool asyncSetImageForImageView:btn urlString:urlstring  imgSize:btn.bounds.size standardWidth:YES completion:^() {
-        //                    [self adjustHeadUI:btn];
-        //                }];
-        //
-        //                UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickScreenshot:)];
-        //                tapGes.numberOfTapsRequired = 1;
-        //                [btn addGestureRecognizer:tapGes];
-        //                self.gestureRecognizer = tapGes;
-        //                [tapGes release];
-        //
-        //
-        //                [thmubsView addSubview:btn];
-        //
-        //
-        //                [btn release];
-        //            }
-        //            int w = space * 2 + (count - 1) * spaceImg + count * imgWidth;
-        //            int h = space + space + imgHeight;
-        //            thmubsView.frame = CGRectMake(contentLabel.frame.origin.x, yoffset, w, h);
-        //            yoffset=yoffset+h;
-        //            [contentView  addSubview:thmubsView];
-        //            [thmubsView release];
-        //            yoffset += [KTResManager dimensionWithKey:DIMEN_REPLY_VERTICAL_LABEL_SPACING];
-        //
-        //            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(adjustHeadUI:) name:KryptaniumNotificationReplyViewAdjustHeadUI object:Nil];
-        //        }
         
         //称赞数
         UIButton *likeNumLabel = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -208,6 +155,38 @@
     [self.likeNumLabelBtn setTitle:[NSString stringWithFormat:@"%@ (%ld)",@"称赞",(long)likeCount] forState:UIControlStateNormal];
 }
 
+-(void)setPicUrls:(NSArray *)picUrls{
+    _picUrls = picUrls;
+    if (picUrls && [picUrls count]) {
+        if (!self.picContentView) {
+            UIView *picContentView = [[UIView alloc] init];
+            self.picContentView = picContentView;
+        }
+        if (!self.picContentView.superview) {
+           [self.containerView addSubview:self.picContentView];
+        }
+        self.picsArray = [NSMutableArray arrayWithCapacity:[_picUrls count]];
+        for (NSString * url in _picUrls) {
+            UIImageView * btn = [[UIImageView alloc] init];
+            btn.userInteractionEnabled = YES;
+            btn.layer.cornerRadius = 4.0f;
+            btn.clipsToBounds = YES;
+            btn.image = [UIImage imageNamed:url];
+            
+            UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickScreenshot:)];
+            tapGes.numberOfTapsRequired = 1;
+            [btn addGestureRecognizer:tapGes];
+            
+            
+            [self.picsArray addObject:btn];
+        }
+    }else{
+        if (self.picContentView) {
+            [self.picContentView.subviews  makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        }
+    }
+}
+
 -(void)updateConstraints{
     [super updateConstraints];
     
@@ -239,6 +218,7 @@
         make.right.mas_equalTo(self.timeLabel.mas_left).mas_offset(-padding);
     }];
     
+   
     
     [self.likeNumLabelBtn mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.containerView);
@@ -279,9 +259,31 @@
         make.left.equalTo(self.containerView);
         make.right.equalTo(self.containerView);
         make.height.mas_greaterThanOrEqualTo(self.contentLabel.font.lineHeight);
-        make.baseline.mas_equalTo(self.likeBtn.mas_top).offset(-padding);
+        if (self.picContentView && self.picContentView.superview){
+            make.baseline.mas_equalTo(self.picContentView.mas_top).offset(-padding);
+        }else{
+            make.baseline.mas_equalTo(self.likeBtn.mas_top).offset(-padding);
+        }
     }];
     
+    if (self.picContentView && self.picContentView.superview) {
+        [self.picContentView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.containerView);
+            make.right.equalTo(self.containerView);
+            make.height.mas_equalTo(self.picContentView.mas_width);
+            make.baseline.mas_equalTo(self.likeBtn.mas_top).offset(-padding);
+        }];
+       
+        for (int i = 0;i < [self.picsArray count];i++) {
+            UIView * view = self.picsArray[i];
+            [self.picContentView addSubview:view];
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.size.equalTo(view.superview);
+                make.center.equalTo(view.superview);
+            }];
+        }
+        
+    }
     
     [self.lineview mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self);
@@ -311,6 +313,10 @@
 }
 
 -(void)clickFunction:(id)sender{
+
+}
+
+-(void)clickScreenshot:(id)sender{
 
 }
 /*

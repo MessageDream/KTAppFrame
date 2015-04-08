@@ -9,7 +9,7 @@
 #import "KTDIscussionDetailViewController.h"
 #import "KTDIscussionDetailView.h"
 
-@interface KTDIscussionDetailViewController ()
+@interface KTDIscussionDetailViewController ()<UITableViewDataSource,UITableViewDelegate,KTCustomTitleBar_ButtonDelegate>
 @property(nonatomic,weak)KTDIscussionDetailView *mainView;
 @end
 
@@ -22,6 +22,7 @@
     KTDIscussionDetailView *view = [[KTDIscussionDetailView alloc] initWithTableViewStyle:UITableViewStylePlain];
 //    view.backgroundColor = [UIColor yellowColor];
     self.view = self.mainView = view;
+    view.customTitleBar.buttonEventObserver = self;
     
 }
 
@@ -36,6 +37,7 @@
     [ self.mainView.contentView.headBtn setBackgroundImage:[UIImage imageNamed:@"defaulthead"] forState:UIControlStateNormal];
     self.mainView.contentView.isWriteBySelf = NO;
     self.mainView.contentView.likeCount = 10;
+    self.mainView.contentView.picUrls = @[@"tab_blank_selected_5"];
     // Do any additional setup after loading the view.
 }
 
@@ -46,6 +48,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)leftButton_onClick:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
 //    navigationController.navigationBarHidden = NO;

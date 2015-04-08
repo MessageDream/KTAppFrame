@@ -19,6 +19,7 @@ typedef enum {
 @property (nonatomic,strong) UILabel *contentLabel;
 @property (nonatomic,assign) BOOL isWriteBySelf;
 @property (nonatomic,assign) NSInteger likeCount;
+@property (nonatomic,strong) NSArray *picUrls;
 
 -(instancetype)initWithStyle:(KTDiscussionDetailContentViewStyle)style;
 @end
