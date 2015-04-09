@@ -9,6 +9,6 @@
 #import "KTTitleBarAndTableView.h"
 #import "KTDiscussionDetailContentView.h"
 
-@interface KTDIscussionDetailView :KTTitleBarAndTableView
+@interface KTDiscussionDetailView :KTTitleBarAndTableView
 @property(nonatomic,strong)KTDiscussionDetailContentView *contentView;
 @end

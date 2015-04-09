@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 jayden. All rights reserved.
 //
 
-#import "KTDIscussionDetailView.h"
+#import "KTDiscussionDetailView.h"
 
 
-@implementation KTDIscussionDetailView
+@implementation KTDiscussionDetailView
 
 -(instancetype)initWithTableViewStyle:(UITableViewStyle)style{
     if (self = [super initWithTableViewStyle:style]) {
@@ -35,21 +35,19 @@
     [self sizeHeaderToFit];
 }
 
+
 - (void) sizeHeaderToFit {
     UIView *headerView = self.contentView;
-    
-    [headerView setNeedsLayout];
-    [headerView layoutIfNeeded];
-    [headerView setNeedsUpdateConstraints];
-    [headerView updateConstraints];
     CGFloat height = [headerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
     
     headerView.frame = ({
         CGRect headerFrame = headerView.frame;
         headerFrame.size.height = height;
-        headerFrame.origin = CGPointMake(0, 0);
         headerFrame;
     });
+    
+    
+    
     self.tableView.tableHeaderView = headerView;
 }
 /*

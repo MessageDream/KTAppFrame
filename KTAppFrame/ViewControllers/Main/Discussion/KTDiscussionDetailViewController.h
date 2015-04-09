@@ -8,6 +8,6 @@
 
 #import "KTTopLayoutGuideViewController.h"
 
-@interface KTDIscussionDetailViewController : KTTopLayoutGuideViewController
+@interface KTDiscussionDetailViewController : KTTopLayoutGuideViewController
 
 @end

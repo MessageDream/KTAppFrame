@@ -187,6 +187,7 @@
     }
 }
 
+
 -(void)updateConstraints{
     [super updateConstraints];
     
@@ -194,9 +195,9 @@
     CGFloat padding = 10.0f;
     CGFloat headWidth = 35.0f;
     
-    if (self.bounds.size.width == 0) {
-        return;
-    }
+//    if (self.bounds.size.width == 0) {
+//        return;
+//    }
     
     [self.headBtn mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.containerView);
@@ -252,28 +253,14 @@
         make.size.mas_equalTo(CGSizeMake(size.width/2, size.height/2));
     }];
     
-
-    
-    [self.contentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.headBtn.mas_bottom).mas_offset(padding);
-        make.left.equalTo(self.containerView);
-        make.right.equalTo(self.containerView);
-        make.height.mas_greaterThanOrEqualTo(self.contentLabel.font.lineHeight);
-        if (self.picContentView && self.picContentView.superview){
-            make.baseline.mas_equalTo(self.picContentView.mas_top).offset(-padding);
-        }else{
-            make.baseline.mas_equalTo(self.likeBtn.mas_top).offset(-padding);
-        }
-    }];
-    
     if (self.picContentView && self.picContentView.superview) {
         [self.picContentView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.containerView);
             make.right.equalTo(self.containerView);
             make.height.mas_equalTo(self.picContentView.mas_width);
-            make.baseline.mas_equalTo(self.likeBtn.mas_top).offset(-padding);
+            make.bottom.mas_equalTo(self.likeBtn.mas_top).offset(-padding);
         }];
-       
+        
         for (int i = 0;i < [self.picsArray count];i++) {
             UIView * view = self.picsArray[i];
             [self.picContentView addSubview:view];
@@ -284,6 +271,20 @@
         }
         
     }
+    
+    [self.contentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.headBtn.mas_bottom).mas_offset(padding);
+        make.left.equalTo(self.containerView);
+        make.right.equalTo(self.containerView);
+//        make.height.mas_greaterThanOrEqualTo(self.contentLabel.font.lineHeight);
+        if (self.picContentView && self.picContentView.superview){
+            make.baseline.mas_equalTo(self.picContentView.mas_top).offset(-padding);
+        }else{
+            make.baseline.mas_equalTo(self.likeBtn.mas_top).offset(-padding);
+        }
+    }];
+    
+   
     
     [self.lineview mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self);
@@ -300,7 +301,7 @@
         }];
     }
     
-
+    
     [self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self).insets(UIEdgeInsetsMake(padding/2, padding, padding/2, padding));
     }];

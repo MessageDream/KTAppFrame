@@ -69,7 +69,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    KTDIscussionDetailViewController * controller = [[KTDIscussionDetailViewController alloc] init];
+    KTDiscussionDetailViewController * controller = [[KTDiscussionDetailViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
