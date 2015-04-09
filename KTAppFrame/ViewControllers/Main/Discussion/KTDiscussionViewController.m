@@ -128,7 +128,11 @@
     cell.replycountLabel.text  = @"回复(17)|称赞(128)";
     cell.contentLabel.text = @"可视对讲发动机啊金卡剪发剪发会计法啊了放假啊开发可浪费电脑蹙额车U盾vhcsvnauhvuana那句拿狙击啊vbj那今年初vajbcjabvcanjncjacnjanajn那就拿vajnvjavnavj";
     [cell.headBtn setBackgroundImage:[UIImage imageNamed:@"defaulthead"] forState:UIControlStateNormal];
-    [cell setImageUrlStr:@"tab_blank_selected_5"];
+    if (indexPath.row % 2 == 0) {
+      [cell setImageUrlStr:nil];
+    }else{
+        [cell setImageUrlStr:@"tab_blank_selected_5"];
+    }
 //    NSLog(@"make cell 2=%i",indexPath.row);
 
     return cell;

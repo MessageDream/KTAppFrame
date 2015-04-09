@@ -112,14 +112,22 @@
 
 -(void)setImageUrlStr:(NSString *)imageUrlStr{
     _imageUrlStr = imageUrlStr;
-    if (!self.customImageView && imageUrlStr) {
-        self.customImageView = [[UIImageView alloc] init];
-        self.customImageView.layer.cornerRadius = 4.0;
-        self.customImageView.clipsToBounds = YES;
-        self.customImageView.image = [UIImage imageNamed:imageUrlStr];
-        [self.contentView addSubview:self.customImageView];
+    if (_imageUrlStr) {
+        if (!self.customImageView) {
+           self.customImageView = [[UIImageView alloc] init];
+            self.customImageView.layer.cornerRadius = 4.0;
+            self.customImageView.clipsToBounds = YES;
+        }
+        self.customImageView.image = [UIImage imageNamed:_imageUrlStr];
+        if (!self.customImageView.superview) {
+            [self.contentView addSubview:self.customImageView];
+        }
+       
+    }else{
+        [self.customImageView removeFromSuperview];
+        self.customImageView = nil;
     }
-    [self updateConstraints];
+    [self updateConstraintsCus];
 }
 
 -(void)layoutSubviews{
@@ -196,9 +204,9 @@
     UIEdgeInsets insets = UIEdgeInsetsMake(padding/2, padding, padding/2, padding);
     
     
-    if (_imageUrlStr && [_imageUrlStr length] >0) {
+    if (self.customImageView && self.customImageView.superview) {
         
-        [self.customImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+        [self.customImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.contentView).offset(-insets.right);
             make.height.mas_equalTo(imageWidth);
             make.width.mas_equalTo(self.customImageView.mas_height);
@@ -206,7 +214,7 @@
         }];
         
         
-        [self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
+        [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(self.customImageView.mas_left).mas_offset(-padding);
             make.top.mas_equalTo(self.contentView).offset(insets.top);
             make.left.mas_equalTo(self.contentView).offset(insets.left);
@@ -215,7 +223,7 @@
         
         
     }else{
-        [self.containerView mas_updateConstraints:^(MASConstraintMaker *make) {
+        [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView).with.insets(insets);
         }];
     }
