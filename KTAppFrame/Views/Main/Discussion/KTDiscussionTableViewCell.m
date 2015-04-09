@@ -125,7 +125,6 @@
        
     }else{
         [self.customImageView removeFromSuperview];
-        self.customImageView = nil;
     }
     [self updateConstraintsCus];
 }
