@@ -16,9 +16,9 @@
         self.detailView = detailView;
         [self.contentView addSubview:detailView];
         [self.detailView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView).insets(UIEdgeInsetsZero);
+            make.edges.equalTo(self.contentView);
         }];
-        self.backgroundColor = [UIColor purpleColor];
+        self.backgroundColor = [UIColor colorWithRed:245/255.0f green:243/255.0f blue:233/255.0f alpha:1];
     }
     return self;
 }
@@ -36,7 +36,6 @@
 
 -(void)updateConstraints{
     [super updateConstraints];
-
 }
 
 @end

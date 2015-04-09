@@ -47,7 +47,6 @@
     });
     
     
-    
     self.tableView.tableHeaderView = headerView;
 }
 /*

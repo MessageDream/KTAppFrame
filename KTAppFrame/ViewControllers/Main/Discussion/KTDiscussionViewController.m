@@ -21,7 +21,7 @@
 
 @implementation KTDiscussionViewController
 
--(void)loadView{    
+-(void)loadView{
     KTDiscussionView * view = [[KTDiscussionView alloc] initWithFrame:[self getWindowBunds]];
     view.delegate = self;
     view.tableView.delegate = self;
@@ -29,22 +29,22 @@
     view.tableSearchBar.delegate = self;
     self.view = view;
     self.tableView = view.tableView;
-//    [self setKtTabBarLayoutGuide:YES];
-//    [self setKtTopLayoutGuide:YES];
+    //    [self setKtTabBarLayoutGuide:YES];
+    //    [self setKtTopLayoutGuide:YES];
 }
 
 #pragma mark - KTDiscussionViewDelegate
 -(void)addDiscussion:(id)sender{
-
+    
 }
 
 #pragma makr - tableView Delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSLog(@"cell height1=%i",indexPath.row);
+    //    NSLog(@"cell height1=%i",indexPath.row);
     CGFloat height = [self autoAdjustedCellHeightAtIndexPath:indexPath inTableView:tableView];
-//    NSLog(@"cell height2=%i",indexPath.row);
- 
+    //    NSLog(@"cell height2=%i",indexPath.row);
+    
     return height;
 }
 
@@ -55,15 +55,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"cell";
-    KTDiscussionTableViewCell *cell  = [self cellForTableView:tableView rowAtIndexPath:indexPath andReuseIdentifier:CellIdentifier];
-   
-//    [cell updateConstraints];
+    KTDiscussionTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[KTDiscussionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    //    [cell updateConstraints];
     
-//    [cell setNeedsUpdateConstraints];
-//    [cell updateConstraintsIfNeeded];
-
-//    [cell setNeedsLayout];
-//    [cell layoutIfNeeded];
+    //    [cell setNeedsUpdateConstraints];
+    //    [cell updateConstraintsIfNeeded];
+    
+    //    [cell setNeedsLayout];
+    //    [cell layoutIfNeeded];
+    [self loadCellContent:cell indexPath:indexPath];
     [cell updateConstraintsCus];
     return cell;
 }
@@ -81,20 +85,16 @@
     if (cellHeight > 0) {
         return cellHeight;
     } else {
-        KTDiscussionTableViewCell *cell = [self cellForTableView:tableView rowAtIndexPath:indexPath andReuseIdentifier:nil];
-        
-//         [cell updateConstraints];
-        
-//        [cell setNeedsUpdateConstraints];
-//        [cell updateConstraintsIfNeeded];
-//        [cell setNeedsLayout];
-//        [cell layoutIfNeeded];
-       
+        static KTDiscussionTableViewCell * cell = nil;
+        if (!cell) {
+            cell = [[KTDiscussionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        }
+        [self loadCellContent:cell indexPath:indexPath];
         [cell updateConstraintsCus];
+        
         CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
         
         height += 1.0f;
-        //计算完后保存，避免多次重复计算
         [self saveCellHeight:height forIndexPath:indexPath];
         return height;
     }
@@ -111,17 +111,9 @@
     return 0;
 }
 
--(KTDiscussionTableViewCell*) cellForTableView:(UITableView *)tableView rowAtIndexPath:(NSIndexPath *)indexPath andReuseIdentifier:(NSString *)CellIdentifier {
-    KTDiscussionTableViewCell *cell = nil;
-    if(CellIdentifier){
-       cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    }
-    if (!cell) {
-        cell = [[KTDiscussionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-//    NSLog(@"make cell 1=%i",indexPath.row);
-    
+
+- (void)loadCellContent:(KTDiscussionTableViewCell*)cell indexPath:(NSIndexPath*)indexPath
+{
     cell.toppedLabel.text = @"置顶";
     cell.nicknameLabel.text  = @"jayden12343545454466466";
     cell.timeLabel.text  = @"03-23 14:57";
@@ -129,14 +121,12 @@
     cell.contentLabel.text = @"可视对讲发动机啊金卡剪发剪发会计法啊了放假啊开发可浪费电脑蹙额车U盾vhcsvnauhvuana那句拿狙击啊vbj那今年初vajbcjabvcanjncjacnjanajn那就拿vajnvjavnavj";
     [cell.headBtn setBackgroundImage:[UIImage imageNamed:@"defaulthead"] forState:UIControlStateNormal];
     if (indexPath.row % 2 == 0) {
-      [cell setImageUrlStr:nil];
+        [cell setImageUrlStr:nil];
     }else{
         [cell setImageUrlStr:@"tab_blank_selected_5"];
     }
-//    NSLog(@"make cell 2=%i",indexPath.row);
-
-    return cell;
 }
+
 
 -(void)saveCellHeight:(CGFloat)height forIndexPath:(NSIndexPath *)indexPath{
     if (!self.heightStoreDic) {
@@ -150,48 +140,48 @@
 #pragma mark - 搜索
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-//    if (searchBar.text!=nil&&searchBar.text.length!=0) {
-//        
-//        [self.gameSearchDiscussions removeAllObjects];
-//        [self searchDiscussion:searchBar.text];
-//        self.refreshHeaderView.hidden = NO;
-//    }
+    //    if (searchBar.text!=nil&&searchBar.text.length!=0) {
+    //
+    //        [self.gameSearchDiscussions removeAllObjects];
+    //        [self searchDiscussion:searchBar.text];
+    //        self.refreshHeaderView.hidden = NO;
+    //    }
 }
 
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     [searchBar setShowsCancelButton:YES];
-//    NSArray *searBarSubViews = [searchBar subviews];
-//    for(UIView  *subview in searBarSubViews)
-//    {
-//        if ([searBarSubViews count]==1) {
-//            for(UIView  *subSubview in [subview subviews])
-//            {
-//                if ([subSubview isKindOfClass:[UIButton class]]) {
-//                    [((UIButton *)subSubview) setTitle:[KTResManager loadString:STRING_CANCEL] forState:UIControlStateNormal];
-//                    break;
-//                }
-//            }
-//            break;
-//        }else{
-//            if ([subview isKindOfClass:[UIButton class]]) {
-//                [((UIButton *)subview) setTitle:[KTResManager loadString:STRING_CANCEL] forState:UIControlStateNormal];
-//                break;
-//            }
-//        }
-//    }
+    //    NSArray *searBarSubViews = [searchBar subviews];
+    //    for(UIView  *subview in searBarSubViews)
+    //    {
+    //        if ([searBarSubViews count]==1) {
+    //            for(UIView  *subSubview in [subview subviews])
+    //            {
+    //                if ([subSubview isKindOfClass:[UIButton class]]) {
+    //                    [((UIButton *)subSubview) setTitle:[KTResManager loadString:STRING_CANCEL] forState:UIControlStateNormal];
+    //                    break;
+    //                }
+    //            }
+    //            break;
+    //        }else{
+    //            if ([subview isKindOfClass:[UIButton class]]) {
+    //                [((UIButton *)subview) setTitle:[KTResManager loadString:STRING_CANCEL] forState:UIControlStateNormal];
+    //                break;
+    //            }
+    //        }
+    //    }
 }
 
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar{
-//    self.isSearch = NO;
-//    searchBar.text = @"";
-//    self.hasMore = (self.gameDiscussions.count < self.discussionTotal);
-//    
-//    
-//    [searchBar setShowsCancelButton:NO animated:NO];
-//    [searchBar resignFirstResponder];
+    //    self.isSearch = NO;
+    //    searchBar.text = @"";
+    //    self.hasMore = (self.gameDiscussions.count < self.discussionTotal);
+    //
+    //
+    //    [searchBar setShowsCancelButton:NO animated:NO];
+    //    [searchBar resignFirstResponder];
 }
 
 - (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
@@ -205,15 +195,15 @@
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-//    // 字符如果变为空，则数据显示为disscussion,而不是search的
-//    if (searchText.length > 0){
-//        
-//        self.refreshHeaderView.hidden = YES;
-//    }
-//    else {
-//        self.isSearch = NO;
-////        _topLabel.text = [NSString stringWithFormat:[KTResManager loadString:STRING_TOPIC_COUNT],[@(0) stringValue]];
-//    }
+    //    // 字符如果变为空，则数据显示为disscussion,而不是search的
+    //    if (searchText.length > 0){
+    //
+    //        self.refreshHeaderView.hidden = YES;
+    //    }
+    //    else {
+    //        self.isSearch = NO;
+    ////        _topLabel.text = [NSString stringWithFormat:[KTResManager loadString:STRING_TOPIC_COUNT],[@(0) stringValue]];
+    //    }
 }
 
 - (void)viewDidLoad {
@@ -241,13 +231,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

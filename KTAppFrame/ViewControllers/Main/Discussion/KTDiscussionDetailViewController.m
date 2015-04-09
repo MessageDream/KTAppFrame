@@ -49,6 +49,7 @@
 
 #pragma makr - tableView Delegate
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //    NSLog(@"cell height1=%i",indexPath.row);
     CGFloat height = [self autoAdjustedCellHeightAtIndexPath:indexPath inTableView:tableView];
@@ -64,20 +65,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"cell";
-    KTDiscussionReplyTableViewCell *cell  = [self cellForTableView:tableView rowAtIndexPath:indexPath andReuseIdentifier:CellIdentifier];
-    
-//    [cell updateConstraints];
-    
-    //    [cell setNeedsUpdateConstraints];
-    //    [cell updateConstraintsIfNeeded];
-    
-    //    [cell setNeedsLayout];
-    //    [cell layoutIfNeeded];
-    
+    KTDiscussionReplyTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[KTDiscussionReplyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    [self loadCellContent:cell indexPath:indexPath];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 
@@ -88,22 +86,31 @@
     if (cellHeight > 0) {
         return cellHeight;
     } else {
-        KTDiscussionReplyTableViewCell *cell = [self cellForTableView:tableView rowAtIndexPath:indexPath andReuseIdentifier:nil];
-        
-//        [cell updateConstraints];
-        
-        //        [cell setNeedsUpdateConstraints];
-        //        [cell updateConstraintsIfNeeded];
-        //        [cell setNeedsLayout];
-        //        [cell layoutIfNeeded];
+        static KTDiscussionReplyTableViewCell * cell = nil;
+        if (!cell) {
+            cell = [[KTDiscussionReplyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        }
+        [self loadCellContent:cell indexPath:indexPath];
         
         CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
         
-        height += 1.0f;
-        //计算完后保存，避免多次重复计算
+//        height += 1.0f;
         [self saveCellHeight:height forIndexPath:indexPath];
         return height;
     }
+}
+
+
+
+- (void)loadCellContent:(KTDiscussionReplyTableViewCell*)cell indexPath:(NSIndexPath*)indexPath
+{
+    cell.detailView.nicknameLabel.text  = @"jayden12343545454466466";
+    cell.detailView.timeLabel.text  = @"03-23 14:57";
+    cell.detailView.contentLabel.text = @"可视对讲发动机啊金卡剪发剪发会计法啊了放假啊开发可浪费电脑蹙额车U盾vhcsvnauhvuana那句拿狙击啊vbj那今年初vajbcjabvcanjncjacnjanajn那就拿vajnvjavnavj";
+    [cell.detailView.headBtn setBackgroundImage:[UIImage imageNamed:@"defaulthead"] forState:UIControlStateNormal];
+    cell.detailView.isWriteBySelf = NO;
+    cell.detailView.likeCount = 10;
+    cell.detailView.picUrls = @[@"tab_blank_selected_5"];
 }
 
 -(CGFloat)cellHeightAtIndexPath:(NSIndexPath *)indexPath{
@@ -117,28 +124,7 @@
     return 0;
 }
 
--(KTDiscussionReplyTableViewCell*) cellForTableView:(UITableView *)tableView rowAtIndexPath:(NSIndexPath *)indexPath andReuseIdentifier:(NSString *)CellIdentifier {
-    KTDiscussionReplyTableViewCell *cell = nil;
-    if(CellIdentifier){
-        cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    }
-    if (!cell) {
-        cell = [[KTDiscussionReplyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    //    NSLog(@"make cell 1=%i",indexPath.row);
-    
-    cell.detailView.nicknameLabel.text  = @"jayden12343545454466466";
-    cell.detailView.timeLabel.text  = @"03-23 14:57";
-    cell.detailView.contentLabel.text = @"可视对讲发动机啊金卡剪发剪发会计法啊了放假啊开发可浪费电脑蹙额车U盾vhcsvnauhvuana那句拿狙击啊vbj那今年初vajbcjabvcanjncjacnjanajn那就拿vajnvjavnavj";
-    [cell.detailView.headBtn setBackgroundImage:[UIImage imageNamed:@"defaulthead"] forState:UIControlStateNormal];
-    cell.detailView.isWriteBySelf = NO;
-    cell.detailView.likeCount = 10;
-    cell.detailView.picUrls = @[@"tab_blank_selected_5"];
-    //    NSLog(@"make cell 2=%i",indexPath.row);
-    
-    return cell;
-}
+
 
 -(void)saveCellHeight:(CGFloat)height forIndexPath:(NSIndexPath *)indexPath{
     if (!self.heightStoreDic) {
