@@ -34,7 +34,6 @@
         tableView.tableHeaderView = searchbar;
         self.tableSearchBar = searchbar;
        
-        //40
         
         UIView *bottomView =[[UIView alloc] init];
         bottomView.backgroundColor =[UIColor whiteColor];
@@ -69,7 +68,8 @@
         
         [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self);
-            make.size.mas_equalTo(CGSizeMake(self.bounds.size.width, 40));
+            make.width.equalTo(self);
+            make.height.mas_equalTo(40);
         }];
         
 //        __weak __typeof(&*bottomView) wbview = bottomView;

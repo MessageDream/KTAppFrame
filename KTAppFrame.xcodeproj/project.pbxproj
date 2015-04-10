@@ -90,6 +90,9 @@
 		B257F02F1AD4C0BF00E9C30B /* KTTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B257F02A1AD4C0BF00E9C30B /* KTTitleBarView.m */; };
 		B257F0321AD4C13600E9C30B /* KTBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B257F0311AD4C13600E9C30B /* KTBaseView.m */; };
 		B257F03F1AD4D16000E9C30B /* KTDiscussionDetailContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B257F03E1AD4D16000E9C30B /* KTDiscussionDetailContentView.m */; };
+		B27E701A1AD784540010AF1E /* KTDiscussionWriteReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27E70191AD784540010AF1E /* KTDiscussionWriteReplyViewController.m */; };
+		B27E701D1AD784830010AF1E /* KTDiscussionWriteReplyView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27E701C1AD784830010AF1E /* KTDiscussionWriteReplyView.m */; };
+		B27E70211AD798E60010AF1E /* KTSSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27E70201AD798E60010AF1E /* KTSSTextView.m */; };
 		B2963BC61AD6148F00997840 /* KTDiscussionReplyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2963BC51AD6148F00997840 /* KTDiscussionReplyTableViewCell.m */; };
 		B2F4A0DE1AC901D70022ACA5 /* KTAppFrame.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2F4A0DD1AC901D70022ACA5 /* KTAppFrame.h */; };
 		B2F4A0E01AC901D70022ACA5 /* KTAppFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4A0DF1AC901D70022ACA5 /* KTAppFrame.m */; };
@@ -314,6 +317,12 @@
 		B257F0311AD4C13600E9C30B /* KTBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTBaseView.m; sourceTree = "<group>"; };
 		B257F03D1AD4D16000E9C30B /* KTDiscussionDetailContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDiscussionDetailContentView.h; sourceTree = "<group>"; };
 		B257F03E1AD4D16000E9C30B /* KTDiscussionDetailContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDiscussionDetailContentView.m; sourceTree = "<group>"; };
+		B27E70181AD784540010AF1E /* KTDiscussionWriteReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDiscussionWriteReplyViewController.h; sourceTree = "<group>"; };
+		B27E70191AD784540010AF1E /* KTDiscussionWriteReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDiscussionWriteReplyViewController.m; sourceTree = "<group>"; };
+		B27E701B1AD784830010AF1E /* KTDiscussionWriteReplyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDiscussionWriteReplyView.h; sourceTree = "<group>"; };
+		B27E701C1AD784830010AF1E /* KTDiscussionWriteReplyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDiscussionWriteReplyView.m; sourceTree = "<group>"; };
+		B27E701F1AD798E60010AF1E /* KTSSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTSSTextView.h; sourceTree = "<group>"; };
+		B27E70201AD798E60010AF1E /* KTSSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTSSTextView.m; sourceTree = "<group>"; };
 		B2963BC41AD6148F00997840 /* KTDiscussionReplyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDiscussionReplyTableViewCell.h; sourceTree = "<group>"; };
 		B2963BC51AD6148F00997840 /* KTDiscussionReplyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDiscussionReplyTableViewCell.m; sourceTree = "<group>"; };
 		B2F4A0DA1AC901D70022ACA5 /* libKTAppFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKTAppFrame.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +374,7 @@
 		B232A21C1ACB96DB009EF8C5 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				B27E701E1AD798E60010AF1E /* KTSSTextView */,
 				B257F0111AD4C02700E9C30B /* KTCustomTitleBar */,
 				B257F0151AD4C02700E9C30B /* KTTabBar */,
 			);
@@ -726,6 +736,8 @@
 				B232A3471ACBA68E009EF8C5 /* KTDiscussionViewController.m */,
 				B257EFF31AD397CC00E9C30B /* KTDiscussionDetailViewController.h */,
 				B257EFF41AD397CC00E9C30B /* KTDiscussionDetailViewController.m */,
+				B27E70181AD784540010AF1E /* KTDiscussionWriteReplyViewController.h */,
+				B27E70191AD784540010AF1E /* KTDiscussionWriteReplyViewController.m */,
 			);
 			path = Discussion;
 			sourceTree = "<group>";
@@ -760,6 +772,8 @@
 				B257F03E1AD4D16000E9C30B /* KTDiscussionDetailContentView.m */,
 				B2963BC41AD6148F00997840 /* KTDiscussionReplyTableViewCell.h */,
 				B2963BC51AD6148F00997840 /* KTDiscussionReplyTableViewCell.m */,
+				B27E701B1AD784830010AF1E /* KTDiscussionWriteReplyView.h */,
+				B27E701C1AD784830010AF1E /* KTDiscussionWriteReplyView.m */,
 			);
 			path = Discussion;
 			sourceTree = "<group>";
@@ -809,6 +823,15 @@
 				B257F02A1AD4C0BF00E9C30B /* KTTitleBarView.m */,
 			);
 			path = KTViewBase;
+			sourceTree = "<group>";
+		};
+		B27E701E1AD798E60010AF1E /* KTSSTextView */ = {
+			isa = PBXGroup;
+			children = (
+				B27E701F1AD798E60010AF1E /* KTSSTextView.h */,
+				B27E70201AD798E60010AF1E /* KTSSTextView.m */,
+			);
+			path = KTSSTextView;
 			sourceTree = "<group>";
 		};
 		B2F4A0D11AC901D70022ACA5 = {
@@ -977,6 +1000,7 @@
 				B232A3841ACBA68F009EF8C5 /* KTNavigationController.m in Sources */,
 				B232A3791ACBA68F009EF8C5 /* KTLengthValidator.m in Sources */,
 				B232A3651ACBA68F009EF8C5 /* KTModelReward.m in Sources */,
+				B27E701A1AD784540010AF1E /* KTDiscussionWriteReplyViewController.m in Sources */,
 				B232A3751ACBA68F009EF8C5 /* NSObject+KTModelHelperKeyValue.m in Sources */,
 				B257F01D1AD4C02700E9C30B /* KTTabBar.m in Sources */,
 				B232A2BB1ACB96F9009EF8C5 /* OpenUDID.m in Sources */,
@@ -987,6 +1011,7 @@
 				B257F02E1AD4C0BF00E9C30B /* KTTitleBarAndTableView.m in Sources */,
 				B232A2B91ACB96F9009EF8C5 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				B257F02F1AD4C0BF00E9C30B /* KTTitleBarView.m in Sources */,
+				B27E701D1AD784830010AF1E /* KTDiscussionWriteReplyView.m in Sources */,
 				B232A2BA1ACB96F9009EF8C5 /* View+MASAdditions.m in Sources */,
 				B257F0321AD4C13600E9C30B /* KTBaseView.m in Sources */,
 				B232A3691ACBA68F009EF8C5 /* KTBaseApi.m in Sources */,
@@ -1006,6 +1031,7 @@
 				B232A36C1ACBA68F009EF8C5 /* KTApiResponse.m in Sources */,
 				B2963BC61AD6148F00997840 /* KTDiscussionReplyTableViewCell.m in Sources */,
 				B232A3731ACBA68F009EF8C5 /* KTModelHelperTypeEncoding.m in Sources */,
+				B27E70211AD798E60010AF1E /* KTSSTextView.m in Sources */,
 				B257F01F1AD4C02700E9C30B /* KTTabBarItem.m in Sources */,
 				B232A37F1ACBA68F009EF8C5 /* KTCommunityApi.m in Sources */,
 				B232A3861ACBA68F009EF8C5 /* KTDiscussionTabBarController.m in Sources */,

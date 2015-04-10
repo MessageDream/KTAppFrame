@@ -9,6 +9,13 @@
 #import "KTTitleBarAndTableView.h"
 #import "KTDiscussionDetailContentView.h"
 
+@protocol  KTDiscussionDetailViewDelegate <NSObject>
+
+-(void)addReplyButton_click:(id)sender;
+
+@end
+
 @interface KTDiscussionDetailView :KTTitleBarAndTableView
 @property(nonatomic,strong)KTDiscussionDetailContentView *contentView;
+@property(nonatomic,weak)id<KTDiscussionDetailViewDelegate> delegate;
 @end

@@ -307,6 +307,7 @@
         make.right.equalTo(self).mas_offset(-padding);
     }];
     
+    
     [self.lineview mas_updateConstraints:^(MASConstraintMaker *make) {
         CGFloat height = self.lineview.image.size.height/3;
         make.top.mas_equalTo(self.containerView.mas_bottom).mas_offset(padding/2 - height/2);
@@ -323,16 +324,11 @@
         }];
     }
     
-    
     [self mas_updateConstraints:^(MASConstraintMaker *make) {
-//        CGFloat imageHeight = [self.picContentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-//        imageHeight += padding;
-//        if (self.style == KTDiscussionDetailContentViewStyleNormal) {
-//            imageHeight *= 5.5;
-//        }
-//        CGFloat he = self.picContentView.bounds.size.height - padding;
-        
-        make.height.mas_equalTo([self.containerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height );
+//        make.bottom.mas_equalTo(self.lineview.mas_bottom).priorityLow();
+        CGFloat height = [self.containerView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+//        NSLog(@"height = %f",height);
+        make.height.mas_equalTo(height);
     }];
     
    

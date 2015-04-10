@@ -113,15 +113,17 @@
         {
             CGRect viewFrame = [self.activeKeyboardControlOfScrollView frame];
             
-            viewFrame.size.height = viewFrame.size.height+saveKeyboardSize.height-activeKeyboardControlOfScrollViewToBottomHeight;
+            viewFrame.size.height = viewFrame.size.height + saveKeyboardSize.height - activeKeyboardControlOfScrollViewToBottomHeight;
             self.activeKeyboardControlOfScrollView.frame = viewFrame;
         }
     }
     
-    activeKeyboardControlOfScrollViewToBottomHeight = [UIScreen mainScreen].applicationFrame.size.height-self.activeKeyboardControlOfScrollView.bounds.size.height-self.activeKeyboardControlOfScrollView.frame.origin.y;
+    CGFloat height = [UIScreen mainScreen].applicationFrame.size.height;
+    
+    activeKeyboardControlOfScrollViewToBottomHeight = height - self.activeKeyboardControlOfScrollView.bounds.size.height - self.activeKeyboardControlOfScrollView.frame.origin.y;
     
     CGRect viewFrame = [self.activeKeyboardControlOfScrollView frame];
-    viewFrame.size.height =  viewFrame.size.height-keyboardSize.height+activeKeyboardControlOfScrollViewToBottomHeight;
+    viewFrame.size.height =  viewFrame.size.height - keyboardSize.height + activeKeyboardControlOfScrollViewToBottomHeight;
     self.activeKeyboardControlOfScrollView.frame = viewFrame;
     
     // Scroll the active text field into view.
@@ -141,7 +143,7 @@
     CGSize keyboardSize = [aValue CGRectValue].size;
     CGRect viewFrame = [self.activeKeyboardControlOfScrollView frame];
     
-    viewFrame.size.height = viewFrame.size.height+keyboardSize.height-activeKeyboardControlOfScrollViewToBottomHeight;
+    viewFrame.size.height = viewFrame.size.height + keyboardSize.height - activeKeyboardControlOfScrollViewToBottomHeight;
     self.activeKeyboardControlOfScrollView.frame = viewFrame;
     
     keyboardShown = NO;
@@ -164,7 +166,5 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
-    self.activeKeyboardControl = nil;
-    self.activeKeyboardControlOfScrollView = nil;
 }
 @end

@@ -16,7 +16,7 @@
 {
     self = [super init];
     if (self) {
-        [self initFirst];
+        [self initTitleBar];
     }
     return self;
 }
@@ -26,12 +26,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-//        [self initFirst];
+        [self initTitleBar];
     }
     return self;
 }
 
--(void) initFirst{
+-(void) initTitleBar{
     _customTitleBar = [[KTCustomTitleBar alloc] init];
     _customTitleBar.titleFontSize = 18;
     _customTitleBar.style = KTKTCustomTitleBar_Style_None;

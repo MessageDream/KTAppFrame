@@ -9,8 +9,9 @@
 #import "KTDiscussionDetailViewController.h"
 #import "KTDiscussionDetailView.h"
 #import "KTDiscussionReplyTableViewCell.h"
+#import "KTDiscussionWriteReplyViewController.h"
 
-@interface KTDiscussionDetailViewController ()<UITableViewDataSource,UITableViewDelegate,KTCustomTitleBar_ButtonDelegate>
+@interface KTDiscussionDetailViewController ()<UITableViewDataSource,UITableViewDelegate,KTCustomTitleBar_ButtonDelegate,KTDiscussionDetailViewDelegate>
 @property(nonatomic,weak)KTDiscussionDetailView *mainView;
 @property(nonatomic,weak) UITableView *tableView;
 @property(nonatomic,strong)NSMutableDictionary *heightStoreDic;
@@ -28,7 +29,13 @@
     view.customTitleBar.buttonEventObserver = self;
     view.tableView.delegate = self;
     view.tableView.dataSource = self;
+    view.delegate = self;
     
+}
+
+-(void)addReplyButton_click:(id)sender{
+    KTDiscussionWriteReplyViewController * controller = [[KTDiscussionWriteReplyViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(void)snsShare:(id)sender{
