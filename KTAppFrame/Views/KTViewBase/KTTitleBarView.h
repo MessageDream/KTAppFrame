@@ -17,6 +17,6 @@
     KTCustomTitleBar *_customTitleBar;
 }
 @property(nonatomic,readonly)KTCustomTitleBar *customTitleBar;
-@property (nonatomic,assign)id<KTCustomTitleBar_ButtonDelegate>delegate_soon;
+@property (nonatomic,weak)id<KTCustomTitleBar_ButtonDelegate>delegate_soon;
 
 @end

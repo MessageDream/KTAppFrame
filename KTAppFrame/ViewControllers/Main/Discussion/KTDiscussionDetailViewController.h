@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 jayden. All rights reserved.
 //
 
-#import "KTTopLayoutGuideViewController.h"
+#import "KTBaseViewController.h"
 
-@interface KTDiscussionDetailViewController : KTTopLayoutGuideViewController
+@interface KTDiscussionDetailViewController : KTBaseViewController
 
 @end

@@ -154,6 +154,9 @@
     //    navigationController.navigationBarHidden = NO;
 }
 
+-(void)dealloc{
+
+}
 /*
  #pragma mark - Navigation
  

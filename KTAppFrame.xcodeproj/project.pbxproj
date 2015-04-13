@@ -79,7 +79,6 @@
 		B232A39C1ACBD033009EF8C5 /* KTImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B232A39B1ACBD033009EF8C5 /* KTImageUtils.m */; };
 		B257EFF51AD397CC00E9C30B /* KTDiscussionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B257EFF41AD397CC00E9C30B /* KTDiscussionDetailViewController.m */; };
 		B257EFF81AD397EE00E9C30B /* KTDiscussionDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = B257EFF71AD397EE00E9C30B /* KTDiscussionDetailView.m */; };
-		B257EFFB1AD3C98D00E9C30B /* KTTopLayoutGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B257EFFA1AD3C98D00E9C30B /* KTTopLayoutGuideViewController.m */; };
 		B257F01C1AD4C02700E9C30B /* KTCustomTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B257F0131AD4C02700E9C30B /* KTCustomTitleBar.m */; };
 		B257F01D1AD4C02700E9C30B /* KTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B257F0171AD4C02700E9C30B /* KTTabBar.m */; };
 		B257F01E1AD4C02700E9C30B /* KTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B257F0191AD4C02700E9C30B /* KTTabBarController.m */; };
@@ -294,8 +293,6 @@
 		B257EFF41AD397CC00E9C30B /* KTDiscussionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDiscussionDetailViewController.m; sourceTree = "<group>"; };
 		B257EFF61AD397EE00E9C30B /* KTDiscussionDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDiscussionDetailView.h; sourceTree = "<group>"; };
 		B257EFF71AD397EE00E9C30B /* KTDiscussionDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDiscussionDetailView.m; sourceTree = "<group>"; };
-		B257EFF91AD3C98D00E9C30B /* KTTopLayoutGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTTopLayoutGuideViewController.h; sourceTree = "<group>"; };
-		B257EFFA1AD3C98D00E9C30B /* KTTopLayoutGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTTopLayoutGuideViewController.m; sourceTree = "<group>"; };
 		B257F0121AD4C02700E9C30B /* KTCustomTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCustomTitleBar.h; sourceTree = "<group>"; };
 		B257F0131AD4C02700E9C30B /* KTCustomTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTCustomTitleBar.m; sourceTree = "<group>"; };
 		B257F0141AD4C02700E9C30B /* KTCustomTitleBarButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCustomTitleBarButtonDelegate.h; sourceTree = "<group>"; };
@@ -706,8 +703,6 @@
 			children = (
 				B232A33C1ACBA68E009EF8C5 /* KTBaseViewController.h */,
 				B232A33D1ACBA68E009EF8C5 /* KTBaseViewController.m */,
-				B257EFF91AD3C98D00E9C30B /* KTTopLayoutGuideViewController.h */,
-				B257EFFA1AD3C98D00E9C30B /* KTTopLayoutGuideViewController.m */,
 				B232A33E1ACBA68E009EF8C5 /* KTNavigationController.h */,
 				B232A33F1ACBA68E009EF8C5 /* KTNavigationController.m */,
 				B232A3401ACBA68E009EF8C5 /* KTUIViewController+KTCustom.h */,
@@ -988,7 +983,6 @@
 				B232A35B1ACBA68F009EF8C5 /* KTModelSuccess.m in Sources */,
 				B232A3801ACBA68F009EF8C5 /* KTFriendApi.m in Sources */,
 				B232A2B21ACB96F9009EF8C5 /* MASCompositeConstraint.m in Sources */,
-				B257EFFB1AD3C98D00E9C30B /* KTTopLayoutGuideViewController.m in Sources */,
 				B257F02B1AD4C0BF00E9C30B /* KTBaseScrollerView.m in Sources */,
 				B232A3661ACBA68F009EF8C5 /* KTModelLeaderboard.m in Sources */,
 				B232A3701ACBA68F009EF8C5 /* KTModelHelperFoundation.m in Sources */,

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>76989407-9673-4AAA-B1FB-85FDA41F2C40</string>
 	<key>IDESourceControlProjectName</key>
-	<string>KTAppFrameTest</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>85BA6B426429A5FA9890BAB76FD18EAC97BCEFE5</key>
 		<string>https://github.com/MessageDream/KTAppFrame.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>KTAppFrameTest/KTAppFrameTest.xcodeproj</string>
+	<string>KTAppFrameTest/KTAppFrameTest.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>85BA6B426429A5FA9890BAB76FD18EAC97BCEFE5</key>

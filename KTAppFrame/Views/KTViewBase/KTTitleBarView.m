@@ -21,16 +21,6 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        [self initTitleBar];
-    }
-    return self;
-}
-
 -(void) initTitleBar{
     _customTitleBar = [[KTCustomTitleBar alloc] init];
     _customTitleBar.titleFontSize = 18;

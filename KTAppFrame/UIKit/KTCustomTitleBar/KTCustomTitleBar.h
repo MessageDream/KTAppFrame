@@ -40,7 +40,7 @@ enum KTKTCustomTitleBar_Style
 @property(nonatomic,strong)UIImage *leftButtonImage;
 @property(nonatomic,strong)UIImage *rightButtonImage;
 @property(nonatomic,strong)UIImage *backgroundImage;
-@property(nonatomic,assign)id<KTCustomTitleBar_ButtonDelegate> buttonEventObserver;
+@property(nonatomic,weak)id<KTCustomTitleBar_ButtonDelegate> buttonEventObserver;
 @property(nonatomic)NSTextAlignment titleTextAlignment;
 @property(nonatomic,readonly)UIButton *leftButton;
 @property(nonatomic,readonly)UIButton *rightButton;

@@ -218,7 +218,6 @@
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    self.navigationController.navigationBarHidden = YES;
 }
 
 

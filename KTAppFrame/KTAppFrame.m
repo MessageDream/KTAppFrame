@@ -56,10 +56,9 @@ static KTAppFrame * s_appframe = nil ;
     [closeBtn addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
     [blankView addSubview:closeBtn];
     
-    __weak __typeof(&*blankView) wblnak = blankView;
     [closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(60, 30));
-        make.top.equalTo(wblnak).mas_offset(10);
+        make.top.equalTo(blankView).mas_offset(10);
     }];
     [blankView addSubview:ktWindow];
     self.window = ktWindow;
@@ -70,10 +69,12 @@ static KTAppFrame * s_appframe = nil ;
 }
 
 -(void)close:(id)sender{
-//    self.window.rootViewController = nil;
-//    [self.window.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.window resignKeyWindow];
+    [[[UIApplication sharedApplication] delegate].window makeKeyAndVisible];
+    
+//    [self.window resignKeyWindow];
     self.window.hidden = YES;
+    self.window.rootViewController = nil;
+    [self.window.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.window removeFromSuperview];
     self.window = nil;
     [self.ktView removeFromSuperview];

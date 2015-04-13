@@ -15,6 +15,6 @@
 @property(nonatomic,weak)UIView *activeKeyboardControl;//同activeKeyboardControlOfScrollView配对使用，针对于被键盘遮挡的情况进行的处理。
 @property(nonatomic,weak)UIScrollView *activeKeyboardControlOfScrollView;
 @property(nonatomic,assign)UIInterfaceOrientation orientation;
--(void)keepOutViewWillShown:(UIView*)view;
--(void)keepOutViewWasHidden;
+//-(void)keepOutViewWillShown:(UIView*)view;
+//-(void)keepOutViewWasHidden;
 @end

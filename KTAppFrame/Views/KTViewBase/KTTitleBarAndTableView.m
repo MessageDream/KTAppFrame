@@ -11,17 +11,6 @@
 @implementation KTTitleBarAndTableView
 @synthesize tableView = _tableView;
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        [_scrollerView removeFromSuperview];
-        _scrollerView = nil;
-    }
-    return self;
-}
-
 -(instancetype)initWithTableViewStyle:(UITableViewStyle)style{
     self = [super init];
     if (self) {

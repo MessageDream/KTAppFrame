@@ -11,7 +11,7 @@
 #import "KTTabBarItem.h"
 #import "KTNavigationController.h"
 
-@interface KTDiscussionTabBarController ()<UINavigationControllerDelegate>
+@interface KTDiscussionTabBarController ()
 
 @end
 

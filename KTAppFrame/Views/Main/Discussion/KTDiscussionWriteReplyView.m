@@ -20,6 +20,7 @@
 
 -(instancetype)init{
     if (self = [super init]) {
+        self.backgroundColor = [UIColor whiteColor];
         _customTitleBar.leftButtonImage = [UIImage imageNamed:@"nav_back"];
         _customTitleBar.rightButtonImage = [UIImage imageNamed:@"button_confirm"];
         [_customTitleBar.rightButton setBackgroundColor:[UIColor greenColor]];
@@ -27,40 +28,6 @@
         
         CGFloat padding = 10.0f;
         
-       UIImage *addImg = [UIImage imageNamed:@"add_image_btn"];
-       _scrollerView.backgroundColor = [UIColor redColor];
-        
-        [_scrollerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self).mas_offset(padding);
-            make.right.equalTo(self).mas_offset(-padding);
-            make.bottom.equalTo(self).mas_offset(-padding/2);
-            make.height.mas_equalTo(addImg.size.height * 3);
-        }];
-        
-        
-        UIButton *addImgButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.addImgButton =  addImgButton;
-       
-        [addImgButton setBackgroundImage:addImg forState:UIControlStateNormal];
-        [_scrollerView addSubview:addImgButton];
-       
-        UIView *blankView = [[UIView alloc] init];
-        [_scrollerView addSubview:blankView];
-        [blankView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(addImg.size.height *2);
-            make.top.equalTo(_scrollerView);
-            make.left.equalTo(_scrollerView); 
-        }];
-        
-        [addImgButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(addImg.size);
-            make.top.mas_equalTo(blankView.mas_bottom);
-            make.bottom.equalTo(_scrollerView);
-            make.left.equalTo(_scrollerView);
-        }];
-       
-        _scrollerView.contentSize = CGSizeMake(addImg.size.width, addImg.size.height  * 5);
-       
         
         UIView *contentView = [[UIView alloc] init];
         [self addSubview:contentView];
@@ -68,9 +35,13 @@
             make.top.mas_equalTo(self.customTitleBar.mas_bottom);
             make.left.equalTo(self).mas_offset(padding);
             make.right.equalTo(self).mas_offset(-padding);
-            make.bottom.mas_equalTo(_scrollerView.mas_top);
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+                make.height.mas_equalTo(400);
+            }else{
+                make.height.mas_equalTo(260);
+            }
         }];
-       
+        
         UILabel *lable = [[UILabel alloc] init];
         lable.font = [UIFont systemFontOfSize:12];
         lable.textAlignment = NSTextAlignmentRight;
@@ -98,15 +69,62 @@
             make.left.equalTo(contentView);
             make.right.equalTo(contentView);
         }];
-       
-        self.activeKeyboardControlOfScrollView = _scrollerView;
         
+      
+        
+        
+       UIImage *addImg = [UIImage imageNamed:@"add_image_btn"];
+        
+        CGSize buttonSize;
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+            buttonSize = addImg.size;
+        }else{
+            buttonSize = CGSizeMake(addImg.size.width/2, addImg.size.height/2);
+        }
+        
+//       _scrollerView.backgroundColor = [UIColor redColor];
+        
+        [_scrollerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self).mas_offset(padding);
+            make.right.equalTo(self).mas_offset(-padding);
+            make.top.mas_equalTo(contentView.mas_bottom);
+            make.height.mas_equalTo(buttonSize.height * 3);
+        }];
+        
+        
+        UIButton *addImgButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.addImgButton =  addImgButton;
+       
+        [addImgButton setBackgroundImage:addImg forState:UIControlStateNormal];
+        [_scrollerView addSubview:addImgButton];
+       
+        UIView *blankView = [[UIView alloc] init];
+        [_scrollerView addSubview:blankView];
+        [blankView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(buttonSize.height *2);
+            make.top.equalTo(_scrollerView);
+            make.left.equalTo(_scrollerView);
+            make.right.equalTo(_scrollerView);
+        }];
+        
+        [addImgButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(buttonSize);
+            make.top.mas_equalTo(blankView.mas_bottom);
+            make.bottom.equalTo(_scrollerView).mas_offset(-padding/2);
+            make.left.equalTo(_scrollerView);
+        }];
+       
+//        _scrollerView.contentSize = CGSizeMake(addImg.size.width, addImg.size.height  * 6);
+       
+        //        self.activeKeyboardControlOfScrollView = _scrollerView;
+        self.activeKeyboardControl = self.addImgButton;
+      
     }
     return self;
 }
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
-    self.activeKeyboardControl = self.addImgButton;
+    
 }
 
 -(void)didMoveToSuperview{
