@@ -35,6 +35,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShown:)
                                                  name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShown:)
+                                                 name:UIKeyboardWillChangeFrameNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillHidden:)
@@ -49,37 +52,22 @@
     if(self.activeKeyboardControl==nil || self.activeKeyboardControlOfScrollView == nil)
         return;
     
-     originScrollHeigh = self.activeKeyboardControlOfScrollView.bounds.size.height;
+    originScrollHeigh = self.activeKeyboardControlOfScrollView.bounds.size.height;
     NSDictionary* info = [aNotification userInfo];
     
     NSValue* aValue = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGSize keyboardSize = [aValue CGRectValue].size;
-    
-    if(keyboardShown)
-    {
-        if(!CGSizeEqualToSize(keyboardSize, saveKeyboardSize))
-        {
-            CGRect viewFrame = [self.activeKeyboardControlOfScrollView frame];
-            
-            viewFrame.size.height = originScrollHeigh;
-            self.activeKeyboardControlOfScrollView.frame = viewFrame;
-        }
-    }
     
     CGFloat height = [UIScreen mainScreen].bounds.size.height - [UIApplication sharedApplication].keyWindow.frame.origin.y - self.frame.origin.y;
     
     
     activeKeyboardControlOfScrollViewToBottomHeight = height - self.activeKeyboardControlOfScrollView.bounds.size.height - self.activeKeyboardControlOfScrollView.frame.origin.y;
     
-    CGRect viewFrame = [self.activeKeyboardControlOfScrollView frame];
-    viewFrame.size.height =  viewFrame.size.height - keyboardSize.height + activeKeyboardControlOfScrollViewToBottomHeight;
-//    self.activeKeyboardControlOfScrollView.frame = viewFrame;
-    
-  
+    CGFloat newHeight =  originScrollHeigh - keyboardSize.height + activeKeyboardControlOfScrollViewToBottomHeight;
     
     [UIView animateWithDuration:0.2 animations:^{
         [self.activeKeyboardControlOfScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(viewFrame.size);
+            make.height.mas_equalTo(newHeight);
         }];
         CGRect activeKeyboardControlRect = [self.activeKeyboardControl frame];
         //    [self.activeKeyboardControlOfScrollView scrollRectToVisible:activeKeyboardControlRect animated:YES];
@@ -96,15 +84,11 @@
 {
     if(self.activeKeyboardControlOfScrollView == nil || self.activeKeyboardControl == nil)
         return;
-//    NSDictionary* info = [aNotification userInfo];
-//    
-//    NSValue* aValue = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
-//    CGSize keyboardSize = [aValue CGRectValue].size;
     
    [UIView animateWithDuration:0.2 animations:^{
-       CGRect viewFrame = [self.activeKeyboardControlOfScrollView frame];
-       viewFrame.size.height = originScrollHeigh;
-       self.activeKeyboardControlOfScrollView.frame = viewFrame;
+       [self.activeKeyboardControlOfScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
+           make.height.mas_equalTo(originScrollHeigh);
+       }];
    } completion:^(BOOL finished) {
        keyboardShown = NO;
        saveKeyboardSize = CGSizeZero;
