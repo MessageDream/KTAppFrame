@@ -11,4 +11,8 @@
 #import "KTBaseView.h"
 @interface KTBaseViewController : UIViewController
 @property(nonatomic,assign)BOOL ktTabBarHidden;
+-(void)showLoading;
+-(void)hideLoading;
+-(void)showDelayTip:(NSString *)text;
+-(void)showDelayTip:(NSString *)text time:(int)thetTime;
 @end

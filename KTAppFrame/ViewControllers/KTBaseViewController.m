@@ -43,6 +43,23 @@
         ((KTTabBarController *)self.tabBarController).ktTabBar.hidden = NO;
     }
 }
+
+
+-(void)showLoading{
+
+}
+
+-(void)hideLoading{
+
+}
+
+-(void)showDelayTip:(NSString *)text{
+
+}
+
+-(void)showDelayTip:(NSString *)text time:(int)thetTime{
+
+}
 /*
 #pragma mark - Navigation
 
